@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <meta charset = "utf-8"> 
 
+当前时间：<span id = "current_time"></span>
+
+<h1>Welcome to https://ahlxm2004.github.io.</h1>
+
 <script type = "text/javascript">
 	function play() {
 		var time = new Date();
@@ -14,10 +18,7 @@
 		document.getElementById("current_time").innerHTML = current_time;
 	}
 
-	setInterval(play, 1000);
+	play(); setInterval(play, 1000);
 </script>
 
-当前时间：<span id = "current_time"></span>
-
-<h1>Welcome to https://ahlxm2004.github.io.</h1>
 </html>
