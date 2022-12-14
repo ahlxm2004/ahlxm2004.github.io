@@ -1,3 +1,23 @@
 <!DOCTYPE html>
+<meta charset = "utf-8"> 
+
+<script type = "text/javascript">
+	function play() {
+		var time = new Date();
+		var current_time =
+			time.getFullYear() + "-" +
+			time.getMonth().toString().padStart(2, '0') + "-" +
+			time.getDate().toString().padStart(2, '0') + " " +
+			time.getHours().toString().padStart(2, '0') + ":" +
+			time.getMinutes().toString().padStart(2, '0') + ":" +
+			time.getSeconds().toString().padStart(2, '0');
+		document.getElementById("current_time").innerHTML = current_time;
+	}
+
+	setInterval(play, 1000);
+</script>
+
+当前时间：<span id = "current_time"></span>
+
 <h1>Welcome to https://ahlxm2004.github.io.</h1>
 </html>
