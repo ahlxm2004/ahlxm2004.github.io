@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <meta charset = "utf-8"> 
 
 <p>base64 加密/解密：</p>
@@ -10,6 +10,7 @@
 	function base64_encoder(event) {
 		document.getElementById("base64_Y").value = window.btoa(unescape(encodeURIComponent(event.target.value)));
 	}
+
 	function base64_decoder(event) {
 		var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
 		if (base64regex.test(event.target.value)) document.getElementById("base64_X").value = decodeURIComponent(escape(window.atob(event.target.value)));
