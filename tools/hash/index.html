@@ -13,7 +13,9 @@
 
 	function base64_decoder(event) {
 		var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
-		if (base64regex.test(event.target.value)) document.getElementById("base64_X").value = decodeURIComponent(escape(window.atob(event.target.value)));
+		if (base64regex.test(event.target.value))
+			try {document.getElementById("base64_X").value = decodeURIComponent(escape(window.atob(event.target.value)));}
+			catch (error) {document.getElementById("base64_X").value = "invisible string";}
 		else document.getElementById("base64_X").value = "invalid string";
 	}
 </script>
