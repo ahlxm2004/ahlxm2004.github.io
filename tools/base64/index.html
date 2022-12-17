@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset = "utf-8"> 
+
+<p>base64 加密/解密：</p>
+<textarea id = "base64_X" oninput = "base64_encoder(event)" style = "width: 40%; height: 200px; display: inline-block;"></textarea>
+<textarea id = "base64_Y" oninput = "base64_decoder(event)" style = "width: 40%; height: 200px; display: inline-block;"></textarea>
+<br/>
+
+<script type="text/javascript">
+	function base64_encoder(event) {
+		document.getElementById("base64_Y").value = window.btoa(unescape(encodeURIComponent(event.target.value)));
+	}
+
+	function base64_decoder(event) {
+		var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+		if (base64regex.test(event.target.value))
+			try {document.getElementById("base64_X").value = decodeURIComponent(escape(window.atob(event.target.value)));}
+			catch (error) {document.getElementById("base64_X").value = "invisible string";}
+		else document.getElementById("base64_X").value = "invalid string";
+	}
+</script>
+
+</html>
