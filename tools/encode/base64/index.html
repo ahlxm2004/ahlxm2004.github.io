@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta charset = "utf-8">
+<link type = "text/css" rel = "stylesheet" href = "../../../addtional_files/CSS/basic.css"></link>
+
+</head>
+
+
+<body>
+
+<p>base64 编码/解码：</p>
+<textarea id = "base64_X" oninput = "base64_encoder(event)"></textarea>
+<textarea id = "base64_Y" oninput = "base64_decoder(event)"></textarea>
+<br/>
+
+<script type="text/javascript">
+	function base64_encoder(event) {
+		document.getElementById("base64_Y").value = window.btoa(unescape(encodeURIComponent(event.target.value)));
+	}
+
+	function base64_decoder(event) {
+		var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+		if (base64regex.test(event.target.value))
+			try {document.getElementById("base64_X").value = decodeURIComponent(escape(window.atob(event.target.value)));}
+			catch (error) {document.getElementById("base64_X").value = "invisible string";}
+		else document.getElementById("base64_X").value = "invalid string";
+	}
+</script>
+
+</body>
+
+</html>
