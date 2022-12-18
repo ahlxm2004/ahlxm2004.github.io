@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta charset = "utf-8">
+<link type = "text/css" rel = "stylesheet" href = "addtional_files/CSS/basic.css"></link>
+
+</head>
+
+
+<body>
+
+<h1>不存在的页面。</h1>
+<span id = "count_down"></span>
+
+<script type = "text/javascript">
+	var second = 5;
+
+	function print() {
+		document.getElementById("count_down").innerHTML = second + " 秒后返回主页面";
+		if ((second--) == 0) clearInterval(print), window.location.replace("index.html");
+	}
+
+	print(); setInterval(print, 1000);
+</script>
+
+</body>
+
+</html>
