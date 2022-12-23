@@ -1,2 +1,10 @@
-body {margin: 3% 5% 5% 5%;}
-textarea {width: 40%; height: 200px; display: inline-block;}
+body {
+	margin: 3% 5% 5% 5%;
+}
+
+textarea {
+	width: 40%;
+	height: 200px;
+	display: inline-block;
+	resize: none;
+}
