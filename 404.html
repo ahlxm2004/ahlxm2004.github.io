@@ -19,7 +19,7 @@
 
 	function print() {
 		document.getElementById("count_down").innerHTML = second + " 秒后返回主页面";
-		if ((second--) == 0) clearInterval(print), window.location.replace("https://ahlxm2004.github.io/index.html");
+		if ((second--) == 0) clearInterval(print), window.location.replace("https://ahlxm2004.github.io");
 	}
 
 	print(); setInterval(print, 1000);
