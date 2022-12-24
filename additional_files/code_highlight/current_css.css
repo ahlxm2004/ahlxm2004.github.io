@@ -1,24 +1,19 @@
 pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.42857143;
-    word-break: break-all;
-    word-wrap: break-word;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.42857143;
+	word-break: break-all;
+	word-wrap: break-word;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 20px;
 }
 
 pre code.hljs{display:block;overflow-x:auto;padding:1em;tab-size:2em}
 
-code.hljs{
-font-size:18px;
-padding:3px 5px;
-color: #000000;
-}
-
+code.hljs{font-size:18px;padding:3px 5px;color: #000000;}
 .hljs{color:#4d4d4c;background:#fff;}
 .hljs ::selection,.hljs::selection{background-color:#d6d6d6;color:#4d4d4c}
 .hljs-comment{color:#8e908c}
