@@ -19,8 +19,8 @@
 	function play() {
 		var time = new Date();
 		var current_time =
-			time.getFullYear() + "-" +
-			time.getMonth().toString().padStart(2, '0') + "-" +
+			time.getFullYear().toString() + "-" +
+			(time.getMonth() + 1).toString().padStart(2, '0') + "-" +
 			time.getDate().toString().padStart(2, '0') + " " +
 			time.getHours().toString().padStart(2, '0') + ":" +
 			time.getMinutes().toString().padStart(2, '0') + ":" +
