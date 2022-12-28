@@ -27,6 +27,16 @@
 			catch (error) {document.getElementById("base64_X").value = "invisible string";}
 		else document.getElementById("base64_X").value = "invalid string";
 	}
+
+	window.onbeforeunload = function() {
+		if (window.localStorage)
+			window.localStorage.setItem("X", document.getElementById("base64_X").value),
+			window.localStorage.setItem("Y", document.getElementById("base64_Y").value);
+	}
+
+	if (window.localStorage && localStorage.getItem("X") != null)
+		document.getElementById("base64_X").innerHTML = localStorage.getItem("X"),
+		document.getElementById("base64_Y").innerHTML = localStorage.getItem("Y");
 </script>
 
 </body>
