@@ -35,11 +35,11 @@
 
 	window.onbeforeunload = function() {
 		if (window.localStorage)
-			window.localStorage.setItem("text", document.getElementById("latex-text").value);
+			window.localStorage.setItem("text", document.getElementById("tools-latex-text").value);
 	}
 
 	if (window.localStorage && localStorage.getItem("text") != null)
-		document.getElementById("text").innerHTML = localStorage.getItem("latex-text"), convert();
+		document.getElementById("text").innerHTML = localStorage.getItem("tools-latex-text"), convert();
 </script>
 
 </body>
