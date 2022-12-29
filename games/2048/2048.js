@@ -126,7 +126,7 @@ function check_fail() {
 		for (var j = 0; j < 3; j++)
 			if (level[i][j] == level[i][j + 1]) return false;
 	for (var i = 0; i < 3; i++)
-		for (var  j = 0; j < 4; j++)
+		for (var j = 0; j < 4; j++)
 			if (level[i][j] == level[i + 1][j]) return false;
 	return true;
 }
