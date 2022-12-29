@@ -164,15 +164,6 @@ function reset() {
 	num = 0; fail = false;
 }
 
-/*function test() {
-	emerge_cell(2, 2, 12);
-	emerge_cell(0, 3, 8);
-	emerge_cell(1, 3, 10);
-	emerge_cell(2, 3, 13);
-	emerge_cell(3, 3, 16);
-	return new Promise((resolve) => setTimeout(resolve, t1));
-}*/
-
 function process(key_code) {
 	if (key_code == 37 && !check_move_left()) return;
 	if (key_code == 38 && !check_move_up()) return;
