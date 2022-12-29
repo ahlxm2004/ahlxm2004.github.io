@@ -169,10 +169,10 @@ function process(key_code) {
 	if (key_code == 39 && !check_move_right()) return;
 	if (key_code == 40 && !check_move_down()) return;
 	switch (key_code) {
-		case 37 : move_left(), suc = true; break;
-		case 38 : move_up(), suc = true; break;
-		case 39 : move_right(), suc = true; break;
-		case 40 : move_down(), suc = true; break;
+		case 37 : move_left(); break;
+		case 38 : move_up(); break;
+		case 39 : move_right(); break;
+		case 40 : move_down(); break;
 	}
 	sleep(t2).then(() => {
 		generate();
