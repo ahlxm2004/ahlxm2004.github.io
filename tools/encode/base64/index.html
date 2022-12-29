@@ -30,13 +30,13 @@
 
 	window.onbeforeunload = function() {
 		if (window.localStorage)
-			window.localStorage.setItem("X", document.getElementById("base64_X").value),
-			window.localStorage.setItem("Y", document.getElementById("base64_Y").value);
+			window.localStorage.setItem("tools-encode-base64-X", document.getElementById("base64_X").value),
+			window.localStorage.setItem("tools-encode-base64-Y", document.getElementById("base64_Y").value);
 	}
 
 	if (window.localStorage && localStorage.getItem("X") != null)
-		document.getElementById("base64_X").innerHTML = localStorage.getItem("X"),
-		document.getElementById("base64_Y").innerHTML = localStorage.getItem("Y");
+		document.getElementById("base64_X").innerHTML = localStorage.getItem("tools-encode-base64-X"),
+		document.getElementById("base64_Y").innerHTML = localStorage.getItem("tools-encode-base64-Y");
 </script>
 
 </body>
