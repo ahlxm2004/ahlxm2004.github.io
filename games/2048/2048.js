@@ -2,7 +2,7 @@ var score, best = 0, id, level, num, grid_size, fail, timeout;
 var color_1 = ["", "#C0FF3E", "#66FF00", "#FFB90F", "#FF7F00", "#FF4040",
 	"#FF0000", "#FF0099", "#FF00FF", "#9933FF", "#EEEE00"];
 var color_2 = ["#505050", "#FFFFFF", "#FFFFFF"];
-var t1 = 200, t2 = 150, t3 = 120, t4 = 500, wait = 200;
+var t1 = 200, t2 = 150, t3 = 120, t4 = 500, wait = 250;
 
 function sleep(time) {
 	return new Promise((resolve) => setTimeout(resolve, time));
