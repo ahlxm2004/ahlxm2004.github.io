@@ -1,7 +1,7 @@
 var score, best = 0, id, level, num, grid_size, fail, timeout;
 var color_1 = ["", "#C0FF3E", "#66FF00", "#FFB90F", "#FF7F00", "#FF4040",
 	"#FF0000", "#FF0099", "#FF00FF", "#9933FF", "#EEEE00"];
-var color_2 = ["#505050", "#FFFFFF", "#FFFFFF"];
+var color_2 = ["#505050", "#FFFFFF"];
 var t1 = 200, t2 = 150, t3 = 120, t4 = 500, wait = 250;
 
 function sleep(time) {
@@ -22,7 +22,7 @@ function new_number_cell(x, y, container) {
 	div.style.width = div.style.height = (grid_size * 2) + "px";
 	div.style.fontSize = (grid_size * (v < 10 ? 0.9 : (v < 14 ? 0.8 : (v < 17 ? 0.64 : 0.56)))) + "px";
 	div.style.borderColor = div.style.backgroundColor = color_1[v <= 10 ? v : 10];
-	div.style.color = color_2[v <= 2 ? 0 : (v <= 10 ? 1 : 2)];
+	div.style.color = color_2[v <= 2 ? 0 : 1];
 	if (v > 8)
 		div.style.textShadow = "0 0 5px white",
 		div.style.boxShadow = "0 0 " + grid_size * 0.3 + "px " + color_1[v <= 10 ? v : 10];
