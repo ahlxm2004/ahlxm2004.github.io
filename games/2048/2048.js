@@ -111,12 +111,11 @@ function move_set(set_x, set_y) {
 			p = j--, set_z.push([id[set_x[j]][set_y[j]], set_x[j], set_y[j]]);
 		if (i != j) move_cell(set_x[i], set_y[i], set_x[j], set_y[j]);
 	}
-	if (set_z != null) {
+	if (set_z != null)
 		sleep(t2).then(() => {
 			for (var i = 0; i < set_z.length; i++)
 				del_cell(set_z[i][0]), double_cell(set_z[i][1], set_z[i][2]);
 		});
-	}
 }
 
 function check_fail() {
