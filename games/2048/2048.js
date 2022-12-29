@@ -70,7 +70,6 @@ function highlight(div, container) {
 	}, t3 / 2);
 }
 
-
 function emerge_cell(x, y, v) {
 	id[x][y] = ++num; level[x][y] = v;
 	var container = document.getElementById("grid-cell-" + x + y);
