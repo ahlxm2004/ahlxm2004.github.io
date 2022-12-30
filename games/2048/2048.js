@@ -91,7 +91,7 @@ function double_cell(x, y) {
 	del_cell(id[x][y]), id[x][y] = ++num, level[x][y]++;
 	var container = document.getElementById("grid-cell-" + x + y);
 	highlight(new_number_cell(x, y, container), container);
-	score += (1 << level[x][y]), update();
+	score += (1 << level[x][y]), update_score();
 }
 
 function check_move_set(set_x, set_y) {
@@ -141,7 +141,7 @@ function move_up() {for (var i = 0; i < 4; i++) move_set([0, 1, 2, 3], [i, i, i,
 function move_right() {for (var i = 0; i < 4; i++) move_set([i, i, i, i], [3, 2, 1, 0]);}
 function move_down() {for (var i = 0; i < 4; i++) move_set([3, 2, 1, 0], [i, i, i, i]);}
 
-function update() {
+function update_score() {
 	if (score > best) best = score;
 	document.getElementById("current-score").innerHTML = "score: " + score;
 	document.getElementById("best-score").innerHTML = "best: " + best;
@@ -162,6 +162,14 @@ function reset() {
 	num = 0; fail = false;
 }
 
+function save() {
+	if (window.localStorage)
+		window.localStorage.setItem("games-2048-score", score),
+		window.localStorage.setItem("games-2048-best", best),
+		window.localStorage.setItem("games-2048-level", JSON.stringify(level)),
+		window.localStorage.setItem("games-2048-fail", fail);
+}
+
 function process(key_code) {
 	if (key_code == 37 && !check_move_left()) return;
 	if (key_code == 38 && !check_move_up()) return;
@@ -175,18 +183,18 @@ function process(key_code) {
 	}
 	sleep(t2).then(() => {
 		generate();
-		if (check_fail()) sleep(t4).then(() => {fail = true, alert("game over!"), restart();});
+		if (check_fail()) fail = true, sleep(t4).then(() => {alert("game over!"), restart();});
+		save();
 	});
 }
-
 
 function restart() {
 	if (id != null)
 		for (var i = 0; i < 4; i++)
 			for (var j = 0; j < 4; j++)
 				if (id[i][j]) del_cell(id[i][j]);
-	score = 0; update(); reset();
-	generate(), generate();
+	score = 0; update_score(); reset();
+	generate(), generate(); save();
 }
 
 function init() {
@@ -214,21 +222,13 @@ function init() {
 		best = localStorage.getItem("games-2048-best");
 	if (window.localStorage && localStorage.getItem("games-2048-fail") == "false") {
 		var _level = JSON.parse(localStorage.getItem("games-2048-level"));
-		score = parseInt(localStorage.getItem("games-2048-score")), update();
+		score = parseInt(localStorage.getItem("games-2048-score")), update_score();
 		reset();
 		for (var i = 0; i < 4; i++)
 			for (var j = 0; j < 4; j++)
 				if (_level[i][j]) emerge_cell(i, j, _level[i][j]);
 	}
 	else restart();
-}
-
-window.onbeforeunload = function() {
-	if (window.localStorage)
-		window.localStorage.setItem("games-2048-score", score),
-		window.localStorage.setItem("games-2048-best", best),
-		window.localStorage.setItem("games-2048-level", JSON.stringify(level)),
-		window.localStorage.setItem("games-2048-fail", fail);
 }
 
 window.onkeydown = function() {
