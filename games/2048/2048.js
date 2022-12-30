@@ -212,8 +212,7 @@ function init() {
 	document.getElementById("button").style.fontSize =
 		(L / 28) + "px";
 
-	grid_size = getComputedStyle(document.getElementById("grid-cell-00"))
-		.getPropertyValue("padding-left");
+	grid_size = getComputedStyle(document.getElementById("grid-cell-00")).getPropertyValue("padding-left");
 	grid_size = parseInt(grid_size.substr(0, grid_size.length - 2));
 
 	if (window.localStorage && localStorage.getItem("games-2048-best") != null)
