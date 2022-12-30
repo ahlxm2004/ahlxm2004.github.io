@@ -9,7 +9,7 @@ function sleep(time) {
 }
 
 function get_key_code(e) {
-	var e = e || window.event;
+	e = e || window.event;
 	return e.keyCode || e.which || e.charCode;
 }
 
