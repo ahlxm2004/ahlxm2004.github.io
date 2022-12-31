@@ -183,7 +183,10 @@ function process(key_code) {
 	}
 	sleep(t2).then(() => {
 		generate();
-		if (check_fail()) fail = true, sleep(t4).then(() => {alert("game over!"), restart();});
+		if (check_fail())
+			fail = true, sleep(t4).then(() => {
+				alert("Game over! Final score: " + score), restart();
+			});
 		save();
 	});
 }
