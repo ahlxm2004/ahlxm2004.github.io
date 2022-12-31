@@ -19,27 +19,27 @@ function new_number_cell(x, y, container) {
 	div.id = "number-cell-" + id[x][y];
 	div.style.top = (container.offsetTop - 2) + "px";
 	div.style.left = (container.offsetLeft - 2) + "px";
-	div.style.width = div.style.height = (grid_size * 2) + "px";
-	div.style.fontSize = (grid_size * (v < 10 ? 0.9 : (v < 14 ? 0.8 : (v < 17 ? 0.64 : 0.56)))) + "px";
+	div.style.width = div.style.height = grid_size + "px";
+	div.style.fontSize = (grid_size * (v < 10 ? 0.45 : (v < 14 ? 0.4 : (v < 17 ? 0.32 : 0.28)))) + "px";
 	div.style.borderColor = div.style.backgroundColor = color_1[v <= 10 ? v : 10];
 	div.style.color = color_2[v <= 2 ? 0 : 1];
 	if (v > 8)
 		div.style.textShadow = "0 0 5px white",
-		div.style.boxShadow = "0 0 " + grid_size * 0.3 + "px " + color_1[v <= 10 ? v : 10];
+		div.style.boxShadow = "0 0 " + grid_size * 0.15 + "px " + color_1[v <= 10 ? v : 10];
 	div.innerHTML = (1 << v);
 	return document.getElementById("grid-container").appendChild(div);
 }
 
 function emerge(div, container) {
 	var _fontSize = div.style.fontSize;
-	div.style.top = (container.offsetTop + grid_size - 4) + "px";
-	div.style.left = (container.offsetLeft + grid_size - 4) + "px";
+	div.style.top = (container.offsetTop + 0.5 * grid_size - 4) + "px";
+	div.style.left = (container.offsetLeft + 0.5 * grid_size - 4) + "px";
 	div.style.height = div.style.width = div.style.fontSize = 0;
 	$(div).animate({
 		top: (container.offsetTop - 2) + "px",
 		left: (container.offsetLeft - 2) + "px",
-		height: (grid_size * 2) + "px",
-		width: (grid_size * 2) + "px",
+		height: grid_size + "px",
+		width: grid_size + "px",
 		fontSize: _fontSize
 	}, t1);
 }
@@ -55,17 +55,17 @@ function highlight(div, container) {
 	var _fontSize = div.style.fontSize;
 	_fontSize = parseInt(_fontSize.substr(0, _fontSize.length - 2));
 	$(div).animate({
-		top: (container.offsetTop - grid_size * 0.25 - 2) + "px",
-		left: (container.offsetLeft - grid_size * 0.25 - 2) + "px",
-		height: (grid_size * 2.5) + "px",
-		width: (grid_size * 2.5) + "px",
+		top: (container.offsetTop - grid_size * 0.125 - 2) + "px",
+		left: (container.offsetLeft - grid_size * 0.125 - 2) + "px",
+		height: (grid_size * 1.25) + "px",
+		width: (grid_size * 1.25) + "px",
 		fontSize: (_fontSize * 1.25) + "px"
 	}, t3 / 2);
 	$(div).animate({
 		top: (container.offsetTop - 2) + "px",
 		left: (container.offsetLeft - 2) + "px",
-		height: (grid_size * 2) + "px",
-		width: (grid_size * 2) + "px",
+		height: grid_size + "px",
+		width: grid_size + "px",
 		fontSize: _fontSize + "px"
 	}, t3 / 2);
 }
@@ -216,7 +216,7 @@ function init() {
 		(L / 28) + "px";
 
 	grid_size = getComputedStyle(document.getElementById("grid-cell-00")).getPropertyValue("padding-left");
-	grid_size = parseInt(grid_size.substr(0, grid_size.length - 2));
+	grid_size = 2 * parseInt(grid_size.substr(0, grid_size.length - 2));
 
 	if (window.localStorage && localStorage.getItem("games-2048-best") != null)
 		best = localStorage.getItem("games-2048-best");
