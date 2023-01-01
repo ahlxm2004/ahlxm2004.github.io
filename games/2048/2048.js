@@ -21,11 +21,11 @@ function new_number_cell(x, y, container) {
 	div.style.left = (container.offsetLeft - 2) + "px";
 	div.style.width = div.style.height = grid_size + "px";
 	div.style.fontSize = (grid_size * (v < 10 ? 0.45 : (v < 14 ? 0.4 : (v < 17 ? 0.32 : 0.28)))) + "px";
-	div.style.borderColor = div.style.backgroundColor = color_1[v <= 10 ? v : 10];
+	div.style.borderColor = div.style.backgroundColor = color_1[v < 10 ? v : 10];
 	div.style.color = color_2[v <= 2 ? 0 : 1];
 	if (v > 8)
 		div.style.textShadow = "0 0 5px white",
-		div.style.boxShadow = "0 0 " + grid_size * 0.15 + "px " + color_1[v <= 10 ? v : 10];
+		div.style.boxShadow = "0 0 " + grid_size * 0.15 + "px " + color_1[v < 10 ? v : 10];
 	div.innerHTML = (1 << v);
 	return document.getElementById("grid-container").appendChild(div);
 }
