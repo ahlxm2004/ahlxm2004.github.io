@@ -200,7 +200,7 @@ function restart() {
 	generate(), generate(); save();
 }
 
-function init() {
+function initialize() {
 	var L = window.screen.height;
 	document.getElementById("game-wrapper").style.width =
 		Math.min(L * 0.7, window.screen.width * 0.8).toString() + "px";
@@ -240,4 +240,4 @@ window.onkeydown = function() {
 };
 
 $('button').on('mousedown', function(event) {event.preventDefault();});
-init();
+initialize();
