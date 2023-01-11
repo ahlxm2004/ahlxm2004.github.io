@@ -30,7 +30,7 @@ $$n!\sim\sqrt{2\pi n}\left(\dfrac{n}{\mathrm{e}}\right)^n$$
 换个话题，$\forall n\in\mathbb{N}^+,k\in\mathbb{N}^+,\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 的值是否可以用 $\dfrac{1}{n}$ 的幂级数逼近？<br/>
 $n=1$ 时 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 发散，不需要考虑。<br/>
 $n\gt 1$ 时由积分近似，
-$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$
+$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$<br/>
 设 $m\in\mathbb{N}^+$，存在一组 $A_i$ 使得
 $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}+O\left(\dfrac{1}{n^{m+1}}\right)$$
 则 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}$ 是关于 $\dfrac{1}{n}$ 的多项式，由 Stolz 定理
@@ -39,7 +39,7 @@ $$\lim\limits_{n\to\infty}\dfrac{\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\
 $$
 \begin{aligned}
 A_{m+1} &= \lim\limits_{n\to\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{m+1}{n^{m+2}}}\\
-&= -\binom{m+1}{k-1}+\sum\limits_{i=k-1}^m A_i\binom{m+1}{i-1}
+&= \frac{1}{m+1}\left[\binom{m+1}{k-1}-\sum\limits_{i=k-1}^m A_i\binom{m+1}{i-1}\right]
 \end{aligned}
 $$
 一些例子：
@@ -55,7 +55,7 @@ $$\frac{a_n}{a_{N+1}}=\exp\left(\sum\limits_{i=n}^N\left(i+\dfrac{1}{2}\right)\l
 可知
 $$a_n=\sqrt{2\pi}\exp\left[\sum\limits_{i=n}^{+\infty}\left(i+\dfrac{1}{2}\right)\ln\left(1+\dfrac{1}{n}\right)-1\right]$$
 全部关于换成 $\dfrac{1}{n}$ 的多项式即可得到 $n!$ 的斯特林幂级数展开
-$$n!=\sqrt{2\pi n}\left(\dfrac{n}{\mathrm{e}}\right)^n\left(1+\dfrac{1}{12n}+\dfrac{1}{288n^2}-\dfrac{139}{51840n^3}-\dfrac{571}{2488320n^4}+\omicron\left(\frac{1}{n^5}\right)\right)$$
+$$n!=\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n\left(1+\dfrac{1}{12n}+\dfrac{1}{288n^2}-\dfrac{139}{51840n^3}-\dfrac{571}{2488320n^4}+\omicron\left(\frac{1}{n^5}\right)\right)$$
 附 c++ 计算斯特林级数程序（__int128 范围内可计算至第 $18$ 项）：<br/>
 <pre><code class = "cpp">#include &lt;bits/stdc++.h&gt;
 
