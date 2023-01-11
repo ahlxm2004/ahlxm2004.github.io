@@ -30,7 +30,7 @@ $$n!\sim\sqrt{2\pi n}\left(\dfrac{n}{\mathrm{e}}\right)^n$$
 换个话题，$\forall n\in\mathbb{N}^+,k\in\mathbb{N}^+,\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 的值是否可以用 $\dfrac{1}{n}$ 的幂级数逼近？<br/>
 $n=1$ 时 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 发散，不需要考虑。<br/>
 $n\gt 1$ 时由积分近似，
-$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$<br/>
+$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$
 设 $m\in\mathbb{N}^+$，存在一组 $A_i$ 使得
 $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}+O\left(\dfrac{1}{n^{m+1}}\right)$$
 则 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}$ 是关于 $\dfrac{1}{n}$ 的多项式，由 Stolz 定理
