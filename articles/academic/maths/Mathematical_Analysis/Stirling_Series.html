@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8"> 
+<link type = "text/css" rel = "stylesheet" href = "../../../../additional_files/CSS/basic.css"></link>
+<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+<script type = "text/javascript" async src="../../../../additional_files/MathJax/es5/tex-mml-chtml.js"></script>
+<link rel = "stylesheet" href = "../../../../additional_files/code_highlight/current_css.css">
+<script style = "text/javascript" src = "../../../../additional_files/code_highlight/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+
+众所周知，
+$$\int_{0}^{\pi/2}\sin^{2n}x\mathrm{d}x=\dfrac{\left(2n-1\right)!!}{\left(2n\right)!!}\cdot\dfrac{\pi}{2}$$
+$$\int_{0}^{\pi/2}\sin^{2n+1}x\mathrm{d}x=\dfrac{\left(2n\right)!!}{\left(2n+1\right)!!}$$
+因为 $\sin^{2n+1}x\lt\sin^{2n}x\lt\sin^{2n-1}x$，积分化简得
+$$\dfrac{2n}{2n+1}\cdot\dfrac{\pi}{2}\lt\dfrac{\left(\left(2n\right)!!\right)^2}{\left(2n+1\right)\left(\left(2n-1\right)!!\right)^2}\lt\dfrac{\pi}{2}$$
+两侧取极限，由夹逼定理可知
+$$\sqrt{\pi}=\lim\limits_{n\to +\infty}\dfrac{\left(n!\right)^22^{2n}}{\left(2n\right)!\sqrt{n}}$$
+设 $\forall n\in\mathbb{N}^+,a_n=\dfrac{n!\mathrm{e}^n}{n^{n+\frac{1}{2}}}$，则 $\sqrt{\pi}=\lim\limits_{n\to +\infty}\dfrac{a_n^2}{\sqrt{2}a_{2n}}$<br/>
+由 $\ln\dfrac{a_n}{a_{n+1}}=\left(n+\dfrac{1}{2}\right)\ln\left(1+\dfrac{1}{n}\right)-1\gt 0$ 可知 $a_n$ 严格递减，设 $\lim\limits_{n\to +\infty}a_n=\alpha$，则 $\alpha=\sqrt{2\pi}$。<br/>
+此时已经可以得到一个初步的结论（即斯特林公式）：
+$$n!\sim\sqrt{2\pi n}\left(\dfrac{n}{\mathrm{e}}\right)^n$$
+换个话题，$\forall n\in\mathbb{N}^+,k\in\mathbb{N}^+,\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 的值是否可以用 $\dfrac{1}{n}$ 的幂级数逼近？<br/>
+$n=1$ 时 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 发散，不需要考虑。<br/>
+$n\gt 1$ 时由积分近似，
+$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$<br/>
+设 $m\in\mathbb{N}^+$，存在一组 $A_i$ 使得
+$$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}+O\left(\dfrac{1}{n^{m+1}}\right)$$
+则 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}$ 是关于 $\dfrac{1}{n}$ 的多项式，由 Stolz 定理
+$$\lim\limits_{n\to\infty}\dfrac{\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}}{\dfrac{1}{n^m}}=\lim\limits_{n\to\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{m}{n^{m+1}}}=0$$
+因为分子是关于 $\dfrac{1}{n}$ 的多项式，所以 $A_{m+1}$ 存在，且
+$$
+\begin{aligned}
+A_{m+1} &= \lim\limits_{n\to\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{m+1}{n^{m+2}}}\\
+&= -\binom{m+1}{k-1}+\sum\limits_{i=k-1}^m A_i\binom{m+1}{i-1}
+\end{aligned}
+$$
+一些例子：
+$$
+\begin{aligned}
+\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^2}&=\dfrac{1}{n}+\dfrac{1}{2n^2}+\dfrac{1}{6n^3}-\dfrac{1}{30n^5}+\dfrac{1}{42n^7}-\dfrac{1}{30n^9}+\omicron\left(\dfrac{1}{n^{10}}\right)\\
+\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^3}&=\dfrac{1}{2n^2}+\dfrac{1}{2n^3}+\dfrac{1}{4n^4}-\dfrac{1}{12n^6}+\dfrac{1}{12n^8}-\dfrac{3}{20n^{10}}+\omicron\left(\dfrac{1}{n^{10}}\right)\\
+\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^4}&=\dfrac{1}{3n^3}+\dfrac{1}{2n^4}+\dfrac{1}{3n^5}-\dfrac{1}{6n^7}+\dfrac{2}{9n^9}+\omicron\left(\dfrac{1}{n^{10}}\right)
+\end{aligned}
+$$
+由
+$$\frac{a_n}{a_{N+1}}=\exp\left(\sum\limits_{i=n}^N\left(i+\dfrac{1}{2}\right)\ln\left(1+\dfrac{1}{n}\right)-1\right)$$
+可知
+$$a_n=\sqrt{2\pi}\exp\left[\sum\limits_{i=n}^{+\infty}\left(i+\dfrac{1}{2}\right)\ln\left(1+\dfrac{1}{n}\right)-1\right]$$
+全部关于换成 $\dfrac{1}{n}$ 的多项式即可得到 $n!$ 的斯特林幂级数展开
+$$n!=\sqrt{2\pi n}\left(\dfrac{n}{e}\right)^n\left(1+\dfrac{1}{12n}+\dfrac{1}{288n^2}-\dfrac{139}{51840n^3}-\dfrac{571}{2488320n^4}+\omicron\left(\frac{1}{n^5}\right)\right)$$
+附 c++ 计算斯特林级数程序（__int128 范围内可计算至第 $18$ 项）：<br/>
+<pre><code class = "cpp">#include &lt;bits/stdc++.h&gt;
+
+#define pc putchar
+
+typedef long long ll; 
+
+const ll L = 18;
+
+ll read_ll() {
+	char c = gc(); ll ans = 0; bool neg = false;
+	while (!isdigit(c)) neg |= (c == '-'), c = gc();
+	while (isdigit(c)) ans = 10 * ans + c - '0', c = gc();
+	return neg ? -ans : ans;
+}
+
+void write_ll(ll x) {
+	if (x &lt; 0) pc('-'), x = -x;
+	if (x &gt; 9) write_ll(x / 10);
+	pc(x % 10 + '0');
+}
+
+ll abs(ll x) {return x &lt; 0 ? -x : x;}
+ll gcd(ll x, ll y) {return y ? gcd(y, x % y) : x;}
+
+struct num {
+	ll x, y;
+	num reduce() {ll d = gcd(abs(x), abs(y)); x /= d, y /= d; return *this;}
+	num(ll _x = 0, ll _y = 1) {x = _x, y = _y; if (y &lt; 0) x = -x, y = -y; reduce();}
+	num &operator += (const num &t) {ll d = gcd(y, t.y); return *this = num(x * (t.y / d) + t.x * (y / d), y / d * t.y);}
+	num &operator -= (const num &t) {ll d = gcd(y, t.y); return *this = num(x * (t.y / d) - t.x * (y / d), y / d * t.y);}
+	num &operator *= (const num &t) {return *this = num(x * t.x, y * t.y);}
+	num &operator /= (const num &t) {return *this = num(x * t.y, y * t.x);}
+	num operator - () {return num(-x, y);}
+};
+
+num operator + (num A, num B) {return A += B;}
+num operator - (num A, num B) {return A -= B;}
+num operator * (num A, num B) {return A *= B;}
+num operator / (num A, num B) {return A /= B;}
+
+typedef std::vector &lt;num&gt; vector;
+
+vector &operator += (vector &A, vector B) {
+	for (ll i = 0; i &lt; L; i++) A[i] += B[i];
+	return A;
+}
+
+vector &operator *= (vector &A, vector B) {
+	vector C(L);
+	for (ll i = 0; i &lt; L; i++)
+		for (ll j = 0; i + j &lt; L; j++)
+			C[i + j] += A[i] * B[j];
+	return A = C;
+}
+
+vector operator + (vector A, vector B) {return A += B;}
+vector operator * (vector A, vector B) {return A *= B;}
+
+vector Exp(vector A) {
+	vector ans(L), tmp(L);
+	ans[0] = tmp[0] = 1;
+	for (ll i = 1; i &lt; L; i++) {
+		tmp *= A;
+		for (ll j = 0; j &lt; L; j++) tmp[j] /= i;
+		ans += tmp;
+	}
+	return ans;
+}
+
+ll binom(ll x, ll y) {
+	if (x &lt; y || y &lt; 0) return 0;
+	ll ans = 1;
+	for (ll i = x; i &gt; x - y; i--) ans *= i;
+	for (ll i = y; i; i--) ans /= i;
+	return ans;
+}
+
+vector seris(ll n) {
+	vector ans(L); ans[n - 1] = num(1, n - 1);
+	for (ll i = n; i &lt; L; i++) {
+		ans[i] = -binom(i, (i - 1) - (i - n));
+		for (ll j = n - 1; j &lt; i; j++)
+			ans[i] += ans[j] * binom(i, j - 1);
+		ans[i] /= -i;
+	} 
+	return ans;
+}
+
+int main() {
+	vector ans(L);
+	for (ll i = 1; i &lt;= L; i++) {
+		num cur = num(1, i + 1) - num(1, 2 * i);
+		if (i & 1) cur = -cur;
+		if (cur.x == 0) continue;
+		vector tmp = seris(i);
+		for (ll j = 0; j &lt; L; j++) ans[j] += cur * tmp[j];
+	}
+	ans = Exp(ans);
+	for (ll i = 0; i &lt; L; i++)
+		write_ll(ans[i].x), pc(' '), pc('/'),
+		pc(' '), write_ll(ans[i].y), pc('\n');
+	return 0;
+}
+</code></pre>
+
+</body>
+
+</html>
