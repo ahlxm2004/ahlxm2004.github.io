@@ -24,18 +24,18 @@
 <div class = "defination">$f^\star$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$ 的一个非空子集 $S$，令 $y_p=\min f\left(S\right),y_q=\max f\left(S\right)$，定义 $f^\star\left(S\right)=\left\{y_i\mid p\le i\le q\right\}$。</div>
 <div class = "defination">$\Delta$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$，定义 $\Delta_i=\left\{y_i,y_{i+1}\right\}$。</div>
 <div class = "defination">$\succ$：若对于任意 $f$，有 $n$ 周期点必有 $m$ 周期点，$n\neq m$，则记作 $n\succ m$。</div>
-<div class = "defination">$T$：$\forall h\in\left[0,1\right]$，$T_h$ 定义域为 $\left[0,1\right]$，且 $T_h\left(x\right)=\min\left\{h,1-2\lvert x-\frac{1}{2}\rvert\right\}$。</div>
+<div class = "defination">$T$：$\forall h\in\left[0,1\right]$，$T_h$ 定义域为 $\left[0,1\right]$，且 $T_h\left(x\right)=\min\left\{h,1-2\lvert x-\dfrac{1}{2}\rvert\right\}$。</div>
 <div class = "defination">$H$：$\forall m\in\mathbb{N}^\star$，对于所有 $T_1$ 上的 $m$ 周期轨 $O$，$H\left(m\right)=\inf\left\{\max O\right\}$。特别地，$\forall n\in\mathbb{N}$，定义 $H_{\left(2n+1\right)2^\infty}=\lim\limits_{m\to +\infty}H\left(\left(2n+1\right)2^m\right)$。</div>
 <div class = "defination">迭代收敛：若 $n\to +\infty,f^n\left(x\right)$ 收敛则称 $f$ 在 $x$ 处迭代收敛。</div>
 <div class = "defination">恰当收敛：若 $f$ 定义域上每个点迭代收敛，且 $\forall n\in\mathbb{N}^\star$，$f\left(x\right)$ 和 $x$ 的大小关系与 $f^n\left(x\right)$ 与 $f\left(x\right)$ 的大小关系相同，则称 $f$ 恰当收敛。</div>
 <div class = "defination">准周期点：若 $x,y\in D_f,m\in\mathbb{N}_+$，$y$ 是 $m$ 周期点，且 $\lim\limits_{n\to +\infty}\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则 $x$ 为 $f$ 的 $m$ 准周期点。</div>
 <div class = "defination">混沌：若 $f$ 的周期点的最小周期没有上界，且存在 $D_f$ 的不可数子集 $S$，满足 $S$ 中无准周期点，且 $\forall x,y\in S,x\neq y,\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x\right)-f^n\left(y\right)\rvert\gt 0,\lim\limits_{n\to +\infty}\inf\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则称 $f$ 是混沌的。</div>
 
-<div class = "theorem">若 $f$ 有 $p$ 周期点 $x_0$，则 $x_0$ 也是 $f^q$ 的 $\frac{p}{\gcd\left(p,q\right)}$ 周期点。</div>
+<div class = "theorem">若 $f$ 有 $p$ 周期点 $x_0$，则 $x_0$ 也是 $f^q$ 的 $\dfrac{p}{\gcd\left(p,q\right)}$ 周期点。</div>
 <div class = "proof">证明：略。</div>
 <div class = "theorem">若 $x_0$ 是 $f^{2^k}$ 的 $m$ 周期点，$m$ 为偶数，则 $x_0$ 是 $f$ 的 $2^km$ 周期点。</div>
 <div class = "proof">
-证明：设 $x_0$ 是 $f$ 的 $n$ 周期点，$m=\frac{n}{\gcd\left(n,2^k\right)}$ 为偶数，所以 $2^k\vert n$，即 $n=2^km$。
+证明：设 $x_0$ 是 $f$ 的 $n$ 周期点，$m=\dfrac{n}{\gcd\left(n,2^k\right)}$ 为偶数，所以 $2^k\vert n$，即 $n=2^km$。
 </div>
 <div class = "theorem">若 $I,J$ 为闭区间，$f\left(I\right)\supseteq J$，则 $\exists K\subseteq I,f\left(K\right)=J$，且 $K$ 也为闭区间。</div>
 <div class = "proof">证明：设 $I=\left[a,b\right],J=\left[c,d\right]$，取 $u=\sup\left\{x\in\left[a,b\right]\mid f\left(x\right)=c\right\}$，若 $\exists x\in\left[u,b\right],f\left(x\right)=d$ 则令 $v=\inf\left\{x\in\left[u,b\right]\mid f\left(x\right)=d\right\},K=\left[u,v\right]$；否则令 $v=\sup\left\{x\in\left[a,u\right]\mid f\left(x\right)=d\right\},K=\left[v,u\right]$ 即可。</div>
@@ -120,7 +120,7 @@ $t=s$ 时显然成立。$t\lt s$ 时由 $\left(2n+1\right)2^t\succ\left(2m+1\rig
 <div class = "proof">证明：显然。</div>
 <div class = "theorem">$\forall n\in\mathbb{N}^\star$，$T_1$ 中存在 $n$ 周期点且有限。</div>
 <div class = "proof">
-证明：$T_1\left(\frac{2}{7}\right)=\frac{4}{7},T_1\left(\frac{4}{7}\right)=\frac{6}{7},T_1\left(\frac{6}{7}\right)=\frac{2}{7}$，所以 $T_1$ 存在 $3$ 周期点，即存在所有周期点。<br/>
+证明：$T_1\left(\dfrac{2}{7}\right)=\dfrac{4}{7},T_1\left(\dfrac{4}{7}\right)=\dfrac{6}{7},T_1\left(\dfrac{6}{7}\right)=\dfrac{2}{7}$，所以 $T_1$ 存在 $3$ 周期点，即存在所有周期点。<br/>
 由 $T_1^n$ 的图像可知 $T_1^n$ 含有 $2^n$ 个不动点，即 $f$ 的 $n$ 周期点有限。
 </div>
 <div class = "theorem">$\forall m\in\mathbb{N}^\star,T_{H\left(m\right)}$ 中 $H\left(m\right)$ 所在周期为 $m$ 周期轨，其它周期轨中无 $H\left(m\right)$ 且长度不为 $m$。</div>
@@ -169,19 +169,19 @@ $t=s$ 时显然成立。$t\lt s$ 时由 $\left(2n+1\right)2^t\succ\left(2m+1\rig
 <div class = "proof">
 证明：显然 $f$ 周期点的最小周期无上界。<br/>
 设 $F\left(u\right)=v,F\left(v\right)=w,F\left(w\right)=u$，$u,v,w$ 两两不同且 $u$ 为最小值。若 $v\lt w$ 则令 $K=\left[u,v\right],L=\left[v,w\right]$，否则令 $K=\left[w,v\right],L=\left[u,w\right]$。<br/>
-设 $r\in\left(\frac{3}{4},1\right)$，$M^r$ 为无限区间列 $\left\{M^r_1,M^r_2,M^r_3,\cdots\right\}$ 满足 $\forall n\in\mathbb{N}_+,M^r_n=K$ 或 $M^r_n\subseteq L$，$F\left(M^r_n\right)\supseteq M^r_{n+1}$，若 $M^r_n=K$ 则 $n$ 为平方数。<br/>
-$\forall r\in\left(\frac{3}{4},1\right),n\in\mathbb{R}_+$，定义 $P\left(M^r,n\right)=\sum\limits_{i=1}^n\left[M^r_i=K\right]$，则 $M^r$ 满足 $\lim\limits_{n\to +\infty}\frac{P\left(M^r,n^2\right)}{n}=r$。<br/>
-显然 $\forall r\in\left(\frac{3}{4},1\right)$，满足条件的 $M^r$ 存在。<br/>
-由闭区间套定理，$\forall r\in\left(\frac{3}{4},1\right),\exists x_r,\forall n\in\mathbb{N}_+,f^n\left(x_r\right)\in M^r_n$。<br/>
-因为 $\forall r\in\left(\frac{3}{4},1\right),n\in\mathbb{N}_+,M^r_n=K\Rightarrow M^{r}_{n+1}\in L\land M^r_{n+2}\in L$，<br/>
+设 $r\in\left(\dfrac{3}{4},1\right)$，$M^r$ 为无限区间列 $\left\{M^r_1,M^r_2,M^r_3,\cdots\right\}$ 满足 $\forall n\in\mathbb{N}_+,M^r_n=K$ 或 $M^r_n\subseteq L$，$F\left(M^r_n\right)\supseteq M^r_{n+1}$，若 $M^r_n=K$ 则 $n$ 为平方数。<br/>
+$\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{R}_+$，定义 $P\left(M^r,n\right)=\sum\limits_{i=1}^n\left[M^r_i=K\right]$，则 $M^r$ 满足 $\lim\limits_{n\to +\infty}\dfrac{P\left(M^r,n^2\right)}{n}=r$。<br/>
+显然 $\forall r\in\left(\dfrac{3}{4},1\right)$，满足条件的 $M^r$ 存在。<br/>
+由闭区间套定理，$\forall r\in\left(\dfrac{3}{4},1\right),\exists x_r,\forall n\in\mathbb{N}_+,f^n\left(x_r\right)\in M^r_n$。<br/>
+因为 $\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}_+,M^r_n=K\Rightarrow M^{r}_{n+1}\in L\land M^r_{n+2}\in L$，<br/>
 设 $m$ 为 $K$ 和 $L$ 的公共端点，则由 $f^2$ 的连续性，$f^n\left(x_r\right)$ 与 $m$ 距离必须大于某个正实数 $\delta$。<br/>
-$\forall \frac{3}{4}\lt r_1\lt r_2\lt 1$，因为存在无穷多个 $n$ 使得 $M^{r_1}_{n^2}\in L\land M^{r_2}_{n^2}=K$，所以 $\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x_{r_1}\right)-f^n\left(x_{r_2}\right)\rvert\ge\delta\gt 0$。</br>
+$\forall \dfrac{3}{4}\lt r_1\lt r_2\lt 1$，因为存在无穷多个 $n$ 使得 $M^{r_1}_{n^2}\in L\land M^{r_2}_{n^2}=K$，所以 $\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x_{r_1}\right)-f^n\left(x_{r_2}\right)\rvert\ge\delta\gt 0$。</br>
 同样地，如果 $y$ 为周期点，也有 $\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x_{r}\right)-f^n\left(y\right)\rvert\ge\delta\gt 0$。</br>
 设 $L=\left[u,v\right]=\left[u_0,v_0\right]$，由 $f\left(\left[u_0,v_0\right]\right)\supseteq\left[u_0,v_0\right]$ 可知存在 $\left[u_1,v_1\right]$ 使得 $\left[u_1,v_1\right]\subseteq\left[u_0,v_0\right],F\left(\left[u_1,v_1\right]\right)=\left[u_0,v_0\right]$ 且 $f\left(u_1\right)=v_0,f\left(v_1\right)=u_0$。<br/>
 同理构造出 $\left[u_2,v_2\right],\left[u_3,v_3\right],\cdots$。设 $u^\star=\lim\limits_{n\to +\infty}u_n,v^\star=\lim\limits_{n\to +\infty}v_n$,则 $f\left(u_n\right)=v_n,f\left(v_n\right)=u_n$。<br/>
-$\forall r\in\left(\frac{3}{4},1\right),n\in\mathbb{N}_+,M^r_{n^2}=M^r_{\left(n+1\right)^2}=K$，令 $M^r_{n^2+1}=\left[u_{2n-1},u^\star\right],M^r_{n^2+3}=\left[u_{2n-3},u^\star\right],\cdots,M^r_{n^2+2n-1}=\left[u_1,u^\star\right]$，<br/>
+$\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}_+,M^r_{n^2}=M^r_{\left(n+1\right)^2}=K$，令 $M^r_{n^2+1}=\left[u_{2n-1},u^\star\right],M^r_{n^2+3}=\left[u_{2n-3},u^\star\right],\cdots,M^r_{n^2+2n-1}=\left[u_1,u^\star\right]$，<br/>
 $M^r_{n^2+2}=\left[v^\star,v_{2n-2}\right],M^r_{n^2+4}=\left[v^\star,v_{2n-4}\right],\cdots,M^r_{n^2+2n}=\left[v^\star,v_0\right]$，可以发现仍然符合条件。</br>
-因为 $r\gt\frac{3}{4}$，所以 $\forall r_1\neq r_2$，存在无限个 $n$ 使得 $M^{r_1}_{n^2}=M^{r_1}_{\left(n+1\right)^2}=M^{r_2}_{n^2}=M^{r_2}_{\left(n+1\right)^2}=K$，因此 $\lvert M^{r_1}_{n^2+1}-M^{r_2}_{n^2+1}\rvert$ 可以任意小，即极限是 $0$。
+因为 $r\gt\dfrac{3}{4}$，所以 $\forall r_1\neq r_2$，存在无限个 $n$ 使得 $M^{r_1}_{n^2}=M^{r_1}_{\left(n+1\right)^2}=M^{r_2}_{n^2}=M^{r_2}_{\left(n+1\right)^2}=K$，因此 $\lvert M^{r_1}_{n^2+1}-M^{r_2}_{n^2+1}\rvert$ 可以任意小，即极限是 $0$。
 </div>
 
 </body>
