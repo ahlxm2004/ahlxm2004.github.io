@@ -1,3 +1,26 @@
 body {
 	line-height: 1.7;
 }
+
+.defination {
+	display: list-item;
+	list-style: disc inside none;
+	list-style-type: square;
+	list-style-color: red;
+	line-height: 2.5;
+}
+
+.theorem {
+	display: list-item;
+	list-style: disc inside none;
+	list-style-type: circle;
+	font-weight: 900;
+	line-height: 2.5;
+}
+
+.proof {
+	display: block;
+	border-left: 5px;
+	margin: 0 0 10px 0;
+	padding: 5px 10px;
+}
