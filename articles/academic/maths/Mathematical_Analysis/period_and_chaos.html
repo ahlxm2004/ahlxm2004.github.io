@@ -15,21 +15,21 @@
 <body>
 
 设 $y=f\left(x\right)$ 是连续函数，且值域为定义域子集。
-<div class = "defination">$f^k$：定义 $f^0\left(x\right)=x,\forall k\in\mathbb{N}^\star,f^k\left(x\right)=f\left(f^{k-1}\left(x\right)\right)$。</div>
-<div class = "defination">$k$ 周期点：定义 $x_0$ 为 $f$ 的 $k$ 周期点，当且仅当 $f^k\left(x_0\right)=x_0\land\forall 1\le i\lt k,f^i\left(x_0\right)\neq x_0$。</div>
-<div class = "defination">不动点：若 $x_0$ 为 $f$ 的 $1$ 周期点，称 $x_0$ 为 $f$ 的不动点。</div>
-<div class = "defination">周期轨：定义 $\left\{x_1,x_2,\cdots,x_{n}\right\}$ 为 $f$ 的 $n$ 周期轨，当且仅当 $f\left(x_n\right)=x_1\land\forall 1\le i\lt n,f\left(x_i\right)=x_{i+1}$，且 $x_i$ 两两不同。</div>
-<div class = "defination">周期轨的重排：对于一个周期轨 $\left\{x_1,x_2,\cdots,x_n\right\}$，将所有 $x_k$ 按大小排列为 $\left\{y_1,y_2,\cdots,y_n\right\}$，称为 $\left\{x_1,x_2,\cdots,x_n\right\}$ 的重排。</div>
-<div class = "defination">$U$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$，$\forall 1\le u\le v\le n$，定义 $U_{u,v}=\left\{y_i\mid u\le i\le v\right\}$。</div>
-<div class = "defination">$f^\star$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$ 的一个非空子集 $S$，令 $y_p=\min f\left(S\right),y_q=\max f\left(S\right)$，定义 $f^\star\left(S\right)=\left\{y_i\mid p\le i\le q\right\}$。</div>
-<div class = "defination">$\Delta$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$，定义 $\Delta_i=\left\{y_i,y_{i+1}\right\}$。</div>
-<div class = "defination">$\succ$：若对于任意 $f$，有 $n$ 周期点必有 $m$ 周期点，$n\neq m$，则记作 $n\succ m$。</div>
-<div class = "defination">$T$：$\forall h\in\left[0,1\right]$，$T_h$ 定义域为 $\left[0,1\right]$，且 $T_h\left(x\right)=\min\left\{h,1-2\lvert x-\dfrac{1}{2}\rvert\right\}$。</div>
-<div class = "defination">$H$：$\forall m\in\mathbb{N}^\star$，对于所有 $T_1$ 上的 $m$ 周期轨 $O$，$H\left(m\right)=\inf\left\{\max O\right\}$。特别地，$\forall n\in\mathbb{N}$，定义 $H_{\left(2n+1\right)2^\infty}=\lim\limits_{m\to +\infty}H\left(\left(2n+1\right)2^m\right)$。</div>
-<div class = "defination">迭代收敛：若 $n\to +\infty,f^n\left(x\right)$ 收敛则称 $f$ 在 $x$ 处迭代收敛。</div>
-<div class = "defination">恰当收敛：若 $f$ 定义域上每个点迭代收敛，且 $\forall n\in\mathbb{N}^\star$，$f\left(x\right)$ 和 $x$ 的大小关系与 $f^n\left(x\right)$ 与 $f\left(x\right)$ 的大小关系相同，则称 $f$ 恰当收敛。</div>
-<div class = "defination">准周期点：若 $x,y\in D_f,m\in\mathbb{N}_+$，$y$ 是 $m$ 周期点，且 $\lim\limits_{n\to +\infty}\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则 $x$ 为 $f$ 的 $m$ 准周期点。</div>
-<div class = "defination">混沌：若 $f$ 的周期点的最小周期没有上界，且存在 $D_f$ 的不可数子集 $S$，满足 $S$ 中无准周期点，且 $\forall x,y\in S,x\neq y,\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x\right)-f^n\left(y\right)\rvert\gt 0,\lim\limits_{n\to +\infty}\inf\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则称 $f$ 是混沌的。</div>
+<div class = "definition">$f^k$：定义 $f^0\left(x\right)=x,\forall k\in\mathbb{N}^\star,f^k\left(x\right)=f\left(f^{k-1}\left(x\right)\right)$。</div>
+<div class = "definition">$k$ 周期点：定义 $x_0$ 为 $f$ 的 $k$ 周期点，当且仅当 $f^k\left(x_0\right)=x_0\land\forall 1\le i\lt k,f^i\left(x_0\right)\neq x_0$。</div>
+<div class = "definition">不动点：若 $x_0$ 为 $f$ 的 $1$ 周期点，称 $x_0$ 为 $f$ 的不动点。</div>
+<div class = "definition">周期轨：定义 $\left\{x_1,x_2,\cdots,x_{n}\right\}$ 为 $f$ 的 $n$ 周期轨，当且仅当 $f\left(x_n\right)=x_1\land\forall 1\le i\lt n,f\left(x_i\right)=x_{i+1}$，且 $x_i$ 两两不同。</div>
+<div class = "definition">周期轨的重排：对于一个周期轨 $\left\{x_1,x_2,\cdots,x_n\right\}$，将所有 $x_k$ 按大小排列为 $\left\{y_1,y_2,\cdots,y_n\right\}$，称为 $\left\{x_1,x_2,\cdots,x_n\right\}$ 的重排。</div>
+<div class = "definition">$U$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$，$\forall 1\le u\le v\le n$，定义 $U_{u,v}=\left\{y_i\mid u\le i\le v\right\}$。</div>
+<div class = "definition">$f^\star$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$ 的一个非空子集 $S$，令 $y_p=\min f\left(S\right),y_q=\max f\left(S\right)$，定义 $f^\star\left(S\right)=\left\{y_i\mid p\le i\le q\right\}$。</div>
+<div class = "definition">$\Delta$：对于一个周期轨的重排 $\left\{y_1,y_2,\cdots,y_n\right\}$，定义 $\Delta_i=\left\{y_i,y_{i+1}\right\}$。</div>
+<div class = "definition">$\succ$：若对于任意 $f$，有 $n$ 周期点必有 $m$ 周期点，$n\neq m$，则记作 $n\succ m$。</div>
+<div class = "definition">$T$：$\forall h\in\left[0,1\right]$，$T_h$ 定义域为 $\left[0,1\right]$，且 $T_h\left(x\right)=\min\left\{h,1-2\lvert x-\dfrac{1}{2}\rvert\right\}$。</div>
+<div class = "definition">$H$：$\forall m\in\mathbb{N}^\star$，对于所有 $T_1$ 上的 $m$ 周期轨 $O$，$H\left(m\right)=\inf\left\{\max O\right\}$。特别地，$\forall n\in\mathbb{N}$，定义 $H_{\left(2n+1\right)2^\infty}=\lim\limits_{m\to +\infty}H\left(\left(2n+1\right)2^m\right)$。</div>
+<div class = "definition">迭代收敛：若 $n\to +\infty,f^n\left(x\right)$ 收敛则称 $f$ 在 $x$ 处迭代收敛。</div>
+<div class = "definition">恰当收敛：若 $f$ 定义域上每个点迭代收敛，且 $\forall n\in\mathbb{N}^\star$，$f\left(x\right)$ 和 $x$ 的大小关系与 $f^n\left(x\right)$ 与 $f\left(x\right)$ 的大小关系相同，则称 $f$ 恰当收敛。</div>
+<div class = "definition">准周期点：若 $x,y\in D_f,m\in\mathbb{N}_+$，$y$ 是 $m$ 周期点，且 $\lim\limits_{n\to +\infty}\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则 $x$ 为 $f$ 的 $m$ 准周期点。</div>
+<div class = "definition">混沌：若 $f$ 的周期点的最小周期没有上界，且存在 $D_f$ 的不可数子集 $S$，满足 $S$ 中无准周期点，且 $\forall x,y\in S,x\neq y,\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x\right)-f^n\left(y\right)\rvert\gt 0,\lim\limits_{n\to +\infty}\inf\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则称 $f$ 是混沌的。</div>
 
 <div class = "theorem">若 $f$ 有 $p$ 周期点 $x_0$，则 $x_0$ 也是 $f^q$ 的 $\dfrac{p}{\gcd\left(p,q\right)}$ 周期点。</div>
 <div class = "proof">证明：略。</div>
