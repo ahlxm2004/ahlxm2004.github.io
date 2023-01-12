@@ -46,8 +46,8 @@
 </div>
 <div class = "theorem">$\forall b\gt 0,n\in \mathbb{Z}\setminus\left\{0\right\},\exists a\gt 0,\mathrm{s.t.} a^n=b$ 且 $a$ 唯一。</div>
 <div class = "proof">
-证明：考虑 $n\gt 0$ 的情况。$n\lt 0$ 时令 $n'=n,a'=\frac{1}{a},b'=\frac{1}{b}$ 即可。
-令 $a=\sup\left\{x\mid x^n\le b\right\}$，则由极限保序性 $a^n\le b$，若 $a^n\lt b$，令 $\mu$ 满足 $\mu\gt 1,\mu^n\lt\frac{b}{a^n}$，则 $\left(\mu a\right)^n\lt b$，矛盾。
+证明：考虑 $n\gt 0$ 的情况。$n\lt 0$ 时令 $n'=n,a'=\frac{1}{a},b'=\frac{1}{b}$ 即可。<br/>
+令 $a=\sup\left\{x\mid x^n\le b\right\}$，则由极限保序性 $a^n\le b$，若 $a^n\lt b$，令 $\mu$ 满足 $\mu\gt 1,\mu^n\lt\frac{b}{a^n}$，则 $\left(\mu a\right)^n\lt b$，矛盾。<br/>
 $a$ 的唯一性由 $x^n$ 的单调性可知。
 </div>
 <div class = "definition">$\forall a\gt 0,n\in\mathbb{N}^{\star}$，定义 $\sqrt[n]{a}=b$，$b$ 为唯一满足 $b^n=a$ 的实数。</div>
@@ -82,7 +82,7 @@ $a$ 的唯一性由 $x^n$ 的单调性可知。
 </div>
 <div class = "theorem">$\forall n\in\mathbb{N}^{\star},a_1,a_2,\cdots,a_n\ge 0,\frac{\sum\limits_{i=1}^n a_i}{n}\ge\sqrt[n]{\prod\limits_{i=1}^n a_i}$，当且仅当 $a_i$ 均相等时取等。</div>
 <div class = "proof">
-证明：存在 $a_i=0$ 时显然成立。下设 $a_i\gt 0$。对 $n$ 归纳，$n=1$ 时显然成立。
+证明：存在 $a_i=0$ 时显然成立。下设 $a_i\gt 0$。对 $n$ 归纳，$n=1$ 时显然成立。<br/>
 $n\gt 1$ 时，$\left(\frac{\sum\limits_{i=1}^n a_i}{n}\right)^n=\left(\frac{a_n+\left(n-1\right)\frac{\sum\limits_{i=1}^{n-1}a_i}{n-1}}{n}\right)^n\ge a_n\left(\frac{\sum\limits_{i=1}^{n-1}a_i}{n-1}\right)^{n-1}\ge\prod\limits_{i=1}^n a_i$，取等当且仅当 $a_n=\frac{\sum\limits_{i=1}^{n-1}a_i}{n-1}=\sqrt[n-1]{\prod\limits_{i=1}^{n-1}a_i}$。得证。
 </div>
 <div class = "theorem">设 $a\in\mathbb{Q},x\gt -1$，如果 $0\lt a\lt 1$，则 $\left(1+x\right)^a\le 1+ax$；如果 $a\lt 0$ 或 $a\gt 1$，则 $\left(1+x\right)^a\ge 1+ax$。当且仅当 $x=0$ 时等号成立。</div>
