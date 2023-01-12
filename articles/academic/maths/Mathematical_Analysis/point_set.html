@@ -17,12 +17,12 @@
 设 $A\in \mathbb{R}^2$ 为平面内一点，$E$ 为一个平面点集。<br/>
 注：不失一般性地，以下邻域均表示圆形邻域。
 
-<div class = "defination">内点：若 $\exists\delta\gt 0$，使 $U\left(A;\delta\right)\subseteq E$，则 $A$ 为 $E$ 的内点。</div>
-<div class = "defination">外点：若 $\exists\delta\gt 0$，使 $U\left(A;\delta\right)\cap E=\varnothing$，则 $A$ 为 $E$ 的外点。</div>
-<div class = "defination">界点：若 $\forall \epsilon\gt 0$，恒有 $U\left(A;\epsilon\right)\cap E\neq \varnothing$ 且 $U\left(A;\epsilon\right)\cap E^c\neq \varnothing$，则 $A$ 为 $E$ 的界点。</div>
-<div class = "defination">余集：$E^c=\mathbb{R}^2\setminus E$ 称为 $E$ 的余集。</div>
-<div class = "defination">$E$ 的全体内点构成的集合称为 $E$ 的内部，记作 $\operatorname{int} E$。</div>
-<div class = "defination">$E$ 的全体界点构成的集合称为 $E$ 的边界，记作 $\partial E$。</div>
+<div class = "definition">内点：若 $\exists\delta\gt 0$，使 $U\left(A;\delta\right)\subseteq E$，则 $A$ 为 $E$ 的内点。</div>
+<div class = "definition">外点：若 $\exists\delta\gt 0$，使 $U\left(A;\delta\right)\cap E=\varnothing$，则 $A$ 为 $E$ 的外点。</div>
+<div class = "definition">界点：若 $\forall \epsilon\gt 0$，恒有 $U\left(A;\epsilon\right)\cap E\neq \varnothing$ 且 $U\left(A;\epsilon\right)\cap E^c\neq \varnothing$，则 $A$ 为 $E$ 的界点。</div>
+<div class = "definition">余集：$E^c=\mathbb{R}^2\setminus E$ 称为 $E$ 的余集。</div>
+<div class = "definition">$E$ 的全体内点构成的集合称为 $E$ 的内部，记作 $\operatorname{int} E$。</div>
+<div class = "definition">$E$ 的全体界点构成的集合称为 $E$ 的边界，记作 $\partial E$。</div>
 
 显然 $A$ 只可能是内点、外点、界点中的一个。<br/>
 
@@ -42,10 +42,10 @@
 <div class = "theorem">$E$ 的内点为 $E^c$ 的外点，$E$ 的外点为 $E^c$ 的内点。</div>
 <div class = "proof">证明：显然。</div>
 
-<div class = "defination">聚点：若 $\forall \epsilon\gt 0$，恒有 $\mathring{U}\left(A;\epsilon\right)\cap E\neq\varnothing$，则 $A$ 为 $E$ 的聚点。</div>
-<div class = "defination">$E$ 的全体聚点构成的集合称为 $E$ 的导集，记作 $E^d$（或 $E'$）。</div>
-<div class = "defination">孤立点：若 $A\in E$ 且 $A\not\in E^d$，则 $A$ 为 $E$ 的孤立点。</div>
-<div class = "defination">$E\cup E^d$ 称为 $E$ 的闭包，记作 $\bar{E}$。</div>
+<div class = "definition">聚点：若 $\forall \epsilon\gt 0$，恒有 $\mathring{U}\left(A;\epsilon\right)\cap E\neq\varnothing$，则 $A$ 为 $E$ 的聚点。</div>
+<div class = "definition">$E$ 的全体聚点构成的集合称为 $E$ 的导集，记作 $E^d$（或 $E'$）。</div>
+<div class = "definition">孤立点：若 $A\in E$ 且 $A\not\in E^d$，则 $A$ 为 $E$ 的孤立点。</div>
+<div class = "definition">$E\cup E^d$ 称为 $E$ 的闭包，记作 $\bar{E}$。</div>
 
 <div class = "theorem">$E$ 的聚点可能属于 $E$，也可能不属于 $E$。</div>
 <div class = "proof">证明：显然。</div>
@@ -79,17 +79,17 @@
 证明：若 $A$ 是界点显然矛盾。若 $A$ 不是界点，则 $\exists\delta\gt 0$，使 $\mathring{U}\left(A;\delta\right)\cap E=\varnothing$，由 $A$ 非孤立点知 $A\not\in E$，则 $A$ 为外点。
 </div>
 
-<div class = "defination">开集：若 $E$ 中每个点都为内点（即 $E=\operatorname{int}E$ 或 $E\cap \partial E=\varnothing$），则称 $E$ 为开集。</div>
-<div class = "defination">闭集：若 $E$ 的所有聚点都属于 $E$（即 $\bar{E}=E$）或 $E$ 没有聚点，则称 $E$ 为闭集。</div>
-<div class = "defination">开域：若非空开集 $E$ 具有连通性，即 $E$ 中任意两点之间都可用一条完全含于 $E$ 的有限折线相连接，则称 $E$ 为开域。</div>
-<div class = "defination">闭域：开域连同其边界所成的集合为闭域。</div>
-<div class = "defination">区域：开域、闭域、开域连同其一部分界点所成的集合，统称为区域。</div>
-<div class = "defination">有界点集：若 $\exists r\gt 0$，使得 $E\subseteq U\left(O;r\right)$，则 $E$ 为有界点集。</div>
-<div class = "defination">无界点集：若 $E$ 不是有界点集，则 $E$ 为无界点集。</div>
-<div class = "defination">点集直径：$d\left(E\right)=\sup\limits_{P_1,P_2\in E}\rho\left(P_1,P_2\right)$ 定义为点集 $E$ 的直径，其中 $\rho\left(P_1,P_2\right)$ 为 $P_1,P_2$ 间的欧几里得距离。</div>
-<div class = "defination">覆盖：若一列点集 $\left\{D_n\right\}$ 满足 $E\in \cup D_n$（即 $\forall X\in E, \exists n, X\in D_n$），则 $\left\{D_n\right\}$ 称为 $E$ 的一个覆盖。</div>
-<div class = "defination">开覆盖：若 $E$ 的覆盖 $\left\{D_n\right\}$ 满足所有 $D_n$ 均为开集，则 $\left\{D_n\right\}$ 称为开覆盖。</div>
-<div class = "defination">紧致集：若 $E$ 的所有开覆盖都有有限子覆盖，则 $E$ 为紧致集，亦称紧集。</div>
+<div class = "definition">开集：若 $E$ 中每个点都为内点（即 $E=\operatorname{int}E$ 或 $E\cap \partial E=\varnothing$），则称 $E$ 为开集。</div>
+<div class = "definition">闭集：若 $E$ 的所有聚点都属于 $E$（即 $\bar{E}=E$）或 $E$ 没有聚点，则称 $E$ 为闭集。</div>
+<div class = "definition">开域：若非空开集 $E$ 具有连通性，即 $E$ 中任意两点之间都可用一条完全含于 $E$ 的有限折线相连接，则称 $E$ 为开域。</div>
+<div class = "definition">闭域：开域连同其边界所成的集合为闭域。</div>
+<div class = "definition">区域：开域、闭域、开域连同其一部分界点所成的集合，统称为区域。</div>
+<div class = "definition">有界点集：若 $\exists r\gt 0$，使得 $E\subseteq U\left(O;r\right)$，则 $E$ 为有界点集。</div>
+<div class = "definition">无界点集：若 $E$ 不是有界点集，则 $E$ 为无界点集。</div>
+<div class = "definition">点集直径：$d\left(E\right)=\sup\limits_{P_1,P_2\in E}\rho\left(P_1,P_2\right)$ 定义为点集 $E$ 的直径，其中 $\rho\left(P_1,P_2\right)$ 为 $P_1,P_2$ 间的欧几里得距离。</div>
+<div class = "definition">覆盖：若一列点集 $\left\{D_n\right\}$ 满足 $E\in \cup D_n$（即 $\forall X\in E, \exists n, X\in D_n$），则 $\left\{D_n\right\}$ 称为 $E$ 的一个覆盖。</div>
+<div class = "definition">开覆盖：若 $E$ 的覆盖 $\left\{D_n\right\}$ 满足所有 $D_n$ 均为开集，则 $\left\{D_n\right\}$ 称为开覆盖。</div>
+<div class = "definition">紧致集：若 $E$ 的所有开覆盖都有有限子覆盖，则 $E$ 为紧致集，亦称紧集。</div>
 
 <div class = "theorem">若 $E$ 既有内点又有外点，则必有界点。</div>
 
