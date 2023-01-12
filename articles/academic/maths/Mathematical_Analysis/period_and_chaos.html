@@ -28,7 +28,7 @@
 <div class = "definition">$H$：$\forall m\in\mathbb{N}^\star$，对于所有 $T_1$ 上的 $m$ 周期轨 $O$，$H\left(m\right)=\inf\left\{\max O\right\}$。特别地，$\forall n\in\mathbb{N}$，定义 $H_{\left(2n+1\right)2^\infty}=\lim\limits_{m\to +\infty}H\left(\left(2n+1\right)2^m\right)$。</div>
 <div class = "definition">迭代收敛：若 $n\to +\infty,f^n\left(x\right)$ 收敛则称 $f$ 在 $x$ 处迭代收敛。</div>
 <div class = "definition">恰当收敛：若 $f$ 定义域上每个点迭代收敛，且 $\forall n\in\mathbb{N}^\star$，$f\left(x\right)$ 和 $x$ 的大小关系与 $f^n\left(x\right)$ 与 $f\left(x\right)$ 的大小关系相同，则称 $f$ 恰当收敛。</div>
-<div class = "definition">准周期点：若 $x,y\in D_f,m\in\mathbb{N}_+$，$y$ 是 $m$ 周期点，且 $\lim\limits_{n\to +\infty}\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则 $x$ 为 $f$ 的 $m$ 准周期点。</div>
+<div class = "definition">准周期点：若 $x,y\in D_f,m\in\mathbb{N}^\star$，$y$ 是 $m$ 周期点，且 $\lim\limits_{n\to +\infty}\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则 $x$ 为 $f$ 的 $m$ 准周期点。</div>
 <div class = "definition">混沌：若 $f$ 的周期点的最小周期没有上界，且存在 $D_f$ 的不可数子集 $S$，满足 $S$ 中无准周期点，且 $\forall x,y\in S,x\neq y,\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x\right)-f^n\left(y\right)\rvert\gt 0,\lim\limits_{n\to +\infty}\inf\lvert f^n\left(x\right)-f^n\left(y\right)\rvert=0$，则称 $f$ 是混沌的。</div>
 
 <div class = "theorem">若 $f$ 有 $p$ 周期点 $x_0$，则 $x_0$ 也是 $f^q$ 的 $\dfrac{p}{\gcd\left(p,q\right)}$ 周期点。</div>
@@ -202,17 +202,17 @@ $\forall x_0\in\mathbb{R}_+$，令 $x_n=f^n\left(x_0\right)$，$\forall \epsilon
 <div class = "proof">
 证明：显然 $f$ 周期点的最小周期无上界。<br/>
 设 $F\left(u\right)=v,F\left(v\right)=w,F\left(w\right)=u$，$u,v,w$ 两两不同且 $u$ 为最小值。若 $v\lt w$ 则令 $K=\left[u,v\right],L=\left[v,w\right]$，否则令 $K=\left[w,v\right],L=\left[u,w\right]$。<br/>
-设 $r\in\left(\dfrac{3}{4},1\right)$，$M^r$ 为无限区间列 $\left\{M^r_1,M^r_2,M^r_3,\cdots\right\}$ 满足 $\forall n\in\mathbb{N}_+,M^r_n=K$ 或 $M^r_n\subseteq L$，$F\left(M^r_n\right)\supseteq M^r_{n+1}$，若 $M^r_n=K$ 则 $n$ 为平方数。<br/>
+设 $r\in\left(\dfrac{3}{4},1\right)$，$M^r$ 为无限区间列 $\left\{M^r_1,M^r_2,M^r_3,\cdots\right\}$ 满足 $\forall n\in\mathbb{N}^\star,M^r_n=K$ 或 $M^r_n\subseteq L$，$F\left(M^r_n\right)\supseteq M^r_{n+1}$，若 $M^r_n=K$ 则 $n$ 为平方数。<br/>
 $\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{R}_+$，定义 $P\left(M^r,n\right)=\sum\limits_{i=1}^n\left[M^r_i=K\right]$，则 $M^r$ 满足 $\lim\limits_{n\to +\infty}\dfrac{P\left(M^r,n^2\right)}{n}=r$。<br/>
 显然 $\forall r\in\left(\dfrac{3}{4},1\right)$，满足条件的 $M^r$ 存在。<br/>
-由闭区间套定理，$\forall r\in\left(\dfrac{3}{4},1\right),\exists x_r,\forall n\in\mathbb{N}_+,f^n\left(x_r\right)\in M^r_n$。<br/>
-因为 $\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}_+,M^r_n=K\Rightarrow M^{r}_{n+1}\in L\land M^r_{n+2}\in L$，<br/>
+由闭区间套定理，$\forall r\in\left(\dfrac{3}{4},1\right),\exists x_r,\forall n\in\mathbb{N}^\star,f^n\left(x_r\right)\in M^r_n$。<br/>
+因为 $\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}^\star,M^r_n=K\Rightarrow M^{r}_{n+1}\in L\land M^r_{n+2}\in L$，<br/>
 设 $m$ 为 $K$ 和 $L$ 的公共端点，由 $f^2$ 的连续性，若 $f^n\left(x_r\right)\in K$，则 $f^n\left(x_r\right)$ 与 $m$ 距离必须大于某个正实数 $\delta$。<br/>
 $\forall \dfrac{3}{4}\lt r_1\lt r_2\lt 1$，因为存在无穷多个 $n$ 使得 $M^{r_1}_{n^2}\in L\land M^{r_2}_{n^2}=K$，所以 $\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x_{r_1}\right)-f^n\left(x_{r_2}\right)\rvert\ge\delta\gt 0$。<br/>
 同样地，如果 $y$ 为周期点，也有 $\lim\limits_{n\to +\infty}\sup\lvert f^n\left(x_{r}\right)-f^n\left(y\right)\rvert\ge\delta\gt 0$。<br/>
 设 $L=\left[u,v\right]=\left[u_0,v_0\right]$，由 $f\left(\left[u_0,v_0\right]\right)\supseteq\left[u_0,v_0\right]$ 可知存在 $\left[u_1,v_1\right]$ 使得 $\left[u_1,v_1\right]\subseteq\left[u_0,v_0\right],F\left(\left[u_1,v_1\right]\right)=\left[u_0,v_0\right]$ 且 $f\left(u_1\right)=v_0,f\left(v_1\right)=u_0$。<br/>
 同理构造出 $\left[u_2,v_2\right],\left[u_3,v_3\right],\cdots$。设 $u^\star=\lim\limits_{n\to +\infty}u_n,v^\star=\lim\limits_{n\to +\infty}v_n$,则 $f\left(u_n\right)=v_n,f\left(v_n\right)=u_n$。<br/>
-$\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}_+,M^r_{n^2}=M^r_{\left(n+1\right)^2}=K$，令 $M^r_{n^2+1}=\left[u_{2n-1},u^\star\right],M^r_{n^2+3}=\left[u_{2n-3},u^\star\right],\cdots,M^r_{n^2+2n-1}=\left[u_1,u^\star\right]$，<br/>
+$\forall r\in\left(\dfrac{3}{4},1\right),n\in\mathbb{N}^\star,M^r_{n^2}=M^r_{\left(n+1\right)^2}=K$，令 $M^r_{n^2+1}=\left[u_{2n-1},u^\star\right],M^r_{n^2+3}=\left[u_{2n-3},u^\star\right],\cdots,M^r_{n^2+2n-1}=\left[u_1,u^\star\right]$，<br/>
 $M^r_{n^2+2}=\left[v^\star,v_{2n-2}\right],M^r_{n^2+4}=\left[v^\star,v_{2n-4}\right],\cdots,M^r_{n^2+2n}=\left[v^\star,v_0\right]$，可以发现仍然符合条件。<br/>
 因为 $r\gt\dfrac{3}{4}$，所以 $\forall r_1\neq r_2$，存在无限个 $n$ 使得 $M^{r_1}_{n^2}=M^{r_1}_{\left(n+1\right)^2}=M^{r_2}_{n^2}=M^{r_2}_{\left(n+1\right)^2}=K$，因此 $\lvert M^{r_1}_{n^2+1}-M^{r_2}_{n^2+1}\rvert$ 可以任意小，即极限是 $0$。
 </div>
