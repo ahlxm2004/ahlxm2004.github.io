@@ -1,5 +1,6 @@
 body {
 	margin: 3% 5% 5% 5%;
+	overflow-x: hidden;
 }
 
 textarea {
