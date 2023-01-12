@@ -33,7 +33,6 @@
 <div class = "proof">证明：取 $\delta$ 使得 $U\left(A;\delta\right)\cap E=\varnothing$，则 $A\not\in E$。</div>
 
 <div class = "theorem">$E$ 的界点可能属于 $E$，也可能不属于 $E$。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">$(E^c)^c=E$</div>
@@ -51,7 +50,6 @@
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">$A$ 为 $E$ 的聚点等价于：在 $A$ 的任何邻域 $U\left(A\right)$ 内都含有 $E$ 中的无穷多个点。</div>
-
 <div class = "proof">
 证明：<br/>
 充分性：若 $A$ 任何邻域内都含有无穷多个点，则任何去心邻域内显然存在 $E$ 中的点。<br/>
@@ -59,7 +57,6 @@
 </div>
 
 <div class = "theorem">孤立点必为界点。</div>
-
 <div class = "proof">
 证明：若 $A$ 为 $E$ 的孤立点，则 $\exists\delta\gt 0$，使 $\mathring{U}\left(A;\delta\right)\cap E=\varnothing$，显然符合界点定义。
 </div>
@@ -68,13 +65,11 @@
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">不是孤立点的界点必为聚点。</div>
-
 <div class = "proof">
 证明：若 $A$ 不是孤立点且是界点，则 $\forall \epsilon\gt 0$，恒有 $\mathring{U}\left(A;\epsilon\right)\cap E\neq \varnothing$，即为聚点。
 </div>
 
 <div class = "theorem">既非聚点，又非孤立点，则必为外点。</div>
-
 <div class = "proof">
 证明：若 $A$ 是界点显然矛盾。若 $A$ 不是界点，则 $\exists\delta\gt 0$，使 $\mathring{U}\left(A;\delta\right)\cap E=\varnothing$，由 $A$ 非孤立点知 $A\not\in E$，则 $A$ 为外点。
 </div>
@@ -92,34 +87,28 @@
 <div class = "definition">紧致集：若 $E$ 的所有开覆盖都有有限子覆盖，则 $E$ 为紧致集，亦称紧集。</div>
 
 <div class = "theorem">若 $E$ 既有内点又有外点，则必有界点。</div>
-
 <div class = "proof">
 证明：设内点 $A\left(x_1,y_1\right)$，外点 $B\left(x_2,y_2\right)$，设 $0\lt \theta\lt 1,C_\theta\left(x_1+\theta\left(x_2-x_1\right),y_1+\theta\left(y_2-y_1\right)\right)$，$S=\left\{\theta \mid C_{\theta}\in \operatorname{int} E\right\}$，$\theta_0=\sup{S}$，则由反证法，$C_{\theta_0}$ 必然为界点。
 </div>
 
 <div class = "theorem">有界点集必有外点。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">有界非空点集必有界点。</div>
-
 <div class = "proof">证明：若无界点，则不可能有内点，则所有点均为外点，点集为空集，矛盾。</div>
 
 <div class = "theorem">若 $E$ 既为开集又为闭集，则 $E$ 为 $\mathbb{R}^2$ 或 $\varnothing$。</div>
-
 <div class = "proof">
 证明：因为 $E$ 中的点都是内点，所以 $E$ 中无界点，所以 $E$ 无孤立点。若 $E$ 有不属于 $E$ 的界点，则不符合闭集定义，所以 $E$ 无界点。<br/>
 因此 $E$ 仅有内点或仅有外点，即 $E$ 为 $\mathbb{R}^2$ 或 $\varnothing$。经检验均符合条件。
 </div>
 
 <div class = "theorem">开域、闭域无孤立点。</div>
-
 <div class = "proof">
 证明：开域显然无孤立点；闭域由开域与边界取并得到，所以无孤立点。
 </div>
 
 <div class = "theorem">闭域必为闭集；闭集不一定为闭域。</div>
-
 <div class = "proof">
 证明：<br/>
 闭域必为闭集：因为闭域无孤立点，所以所有内点、界点都为聚点，且界点都在点集内，满足闭集定义。<br/>
@@ -127,15 +116,12 @@
 </div>
 
 <div class = "theorem">$E$ 为有界点集等价于：存在矩形区域 $\left[a,b\right]\times\left[c,d\right]\supseteq E$。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">$\rho\left(P_1,P_2\right)\le \rho\left(P_1,P_3\right)+\rho\left(P_2,P_3\right)$</div>
-
 <div class = "proof">证明：平方后展开，由高中数学可得。</div>
 
 <div class = "theorem">$\partial E$ 恒为闭集。</div>
-
 <div class = "proof">
 证明：<br/>
 若 $\left(\partial E\right)^d=\varnothing$，则显然成立。<br/>
@@ -144,40 +130,33 @@
 </div>
 
 <div class = "theorem">$E^d$ 恒为闭集。</div>
-
 <div class = "proof">证明：与上一个几乎完全相同，故略。</div>
 
 <div class = "theorem">若 $E$ 为闭集（即 $E^d\subseteq E$），则 $\partial E\subseteq E$。</div>
-
 <div class = "proof">
 证明：设 $X\in\partial E$，则 $X$ 为 $E$ 的孤立点或聚点。<br/>
 若 $X$ 为孤立点，则 $X\not\in\partial E$；若 $X$ 为聚点，则 $X\subseteq E$。
 </div>
 
 <div class = "theorem">若 $\partial E\subseteq E$，则 $E^c$ 为开集（即 $E^c=\operatorname{int}E^c$）。</div>
-
 <div class = "proof">
 证明：显然有 $\operatorname{int}E^c\subseteq E^c$，因此只需证 $E^c\subseteq \operatorname{int}E^c$。
 $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $X$ 为 $E$ 的外点，所以 $X$ 为 $E^c$ 的内点，即 $X\in \operatorname{int}E^c$。
 </div>
 
 <div class = "theorem">若 $E^c$ 为开集（即 $E^c=\operatorname{int}E^c$），则 $E$ 为闭集（即 $E^d\subseteq E$）。</div>
-
 <div class = "proof">
 证明：$\forall X\in E^d$，若 $X\not\in E$ 则 $X\in E^c$，则 $X$ 为 $E^c$ 的内点，为 $E$ 的外点，显然矛盾。<br/>
 所以 $X\in E$，即 $E^d\subseteq E$。
 </div>
 
 <div class = "theorem">$E$ 为闭集等价于 $\partial E\subseteq E$，亦等价于 $E^c$ 为开集。</div>
-
 <div class = "proof">证明：由上述三条可得。</div>
 
 <div class = "theorem">开集的余集为闭集，闭集的余集为开集。</div>
-
 <div class = "proof">证明：由上一条可得。</div>
 
 <div class = "theorem">设 $\left\{X_n\right\}$ 为一个存在极限的点列，$X_0$ 为极限，则 $X_0$ 为点集 $\left\{X_n\right\}$ 的聚点或 $X_0$ 与某个 $X_n$ 相重合。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">
@@ -188,7 +167,6 @@ $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $
 </ul>
 则存在唯一一点 $P_0$，满足 $\forall n\in \mathbb{N}^{\star},P_0\in E_n$。
 </div>
-
 <div class = "proof">
 证明：任取点列 $P_n$，$\forall n\in \mathbb{N}^{\star},P_n\in E_n$，则 $\forall n,m\in \mathbb{N}^{\star},\rho\left(P_n,P_m\right)\le d_{\min\left\{n,m\right\}}$，由柯西准则，$P_n$ 收敛。<br/>
 存在性：设 $\lim\limits_{n\to +\infty}P_n=P_0$，任意取定 $n$，$m\gt n$ 时 $P_m\in E_m\subset E_n$，再令 $m\to +\infty$，因为 $D_n$ 为闭域，所以 $D_n$ 为闭集，因为 $P_0$ 为极限，所以 $P_0$ 为聚点或 $P_0$ 与某个 $P_x\left(x\gt n\right)$ 相重合，所以 $P_0\in D_n$。<br/>
@@ -196,26 +174,21 @@ $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $
 </div>
 
 <div class = "theorem">把上述闭域改为闭集仍成立。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">对上述闭域套，$\forall \epsilon\gt 0,\exists N\in \mathbb{N}^{\star}$，当 $n\gt N$ 时 $D_n\in U\left(P_0,\epsilon\right)$。</div>
-
 <div class = "proof">证明：显然。</div>
 
 <div class = "theorem">聚点定理：若 $E$ 为有界无限点集，则 $E$ 至少有一个聚点。</div>
-
 <div class = "proof">
 证明：由于 $E$ 有界，所以存在一个闭正方形 $D_1\supset E$。将 $D_1$ 分为四个小正方形，则存在一个小正方形内有无限个点，记为 $D_2$。<br/>
 不断重复，由闭域套定理，存在一点 $P_0$ 属于所有正方形，显然 $P_0$ 为聚点。
 </div>
 
 <div class = "theorem">任一有界无限点集必存在收敛子列。</div>
-
 <div class = "proof">证明：与上一个几乎完全相同，故略。</div>
 
 <div class = "theorem">$\forall a\gt 0,\left[-a,a\right]\times \left[-a,a\right]$ 为紧致集。</div>
-
 <div class = "proof">
 证明：采用反证法。若 $E=E_1=\left[-a,a\right]\times \left[-a,a\right]$ 不为紧致集，则取一列无限开集 $\left\{D_n\right\}$ 满足其任意有限子集均无法覆盖 $E$。将 $E$ 四等分后的四个闭正方形中必存在至少一个亦满足此性质，在此正方形 $E_2$ 中进行相同操作。<br/>
 分割趋于无限时，由闭域套定理必存在唯一一点 $P$ 满足 $\forall n\in \mathbb{N}^{\star}, P\in E_n$。<br/>
@@ -223,7 +196,6 @@ $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $
 </div>
 
 <div class = "theorem">紧致集的闭子集也是紧致的。</div>
-
 <div class = "proof">
 证明：设 $E$ 为紧致集，$E'$ 为 $E$ 的一个闭子集，$U=\mathbb{R}^2\setminus E'$ 为开集。<br/>
 设 $\left\{D'_n\right\}$ 为 $E'$ 的一个开覆盖，则 $\left\{D'_n\right\}\cup U$ 为 $E$ 的一个开覆盖，由 $E$ 是紧致集知存在有限覆盖。<br/>
@@ -231,14 +203,12 @@ $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $
 </div>
 
 <div class = "theorem">紧致集必为有界点集。</div>
-
 <div class = "proof">
 证明：设 $\forall n\in \mathbb{N}^{\star}, D_n=\left\{\left(x,y\right)\mid x^2+y^2\lt n^2\right\}$，则显然 $\left\{D_n\right\}$ 可覆盖所有紧致集。<br/>
 由紧致集定义，存在 $\left\{D_n\right\}$ 的有限子集覆盖该紧致集，取所取 $n$ 的最大值可知紧致集有界。
 </div>
 
 <div class = "theorem">紧致集必为闭集。</div>
-
 <div class = "proof">
 证明：采用反证法。设紧致集 $E$ 为开集，则存在界点 $X\not\in E$。<br/>
 构造 $E$ 无限的开覆盖：以每个 $E$ 内的点的一个邻域，满足 $X$ 不在邻域中。则 $X$ 的任意大小的邻域均与此覆盖有交。<br/>
@@ -246,26 +216,23 @@ $\forall X\in E^c$，因为 $E$ 的所有内点、界点均属于 $E$，所以 $
 </div>
 
 <div class = "theorem">有界闭集必为紧致集。</div>
-
 <div class = "proof">
 证明：设 $E$ 有界，则 $\exists a\gt 0, E\subset \left[-a,a\right]\times \left[-a,a\right]$。</br>
 由 $\left[-a,a\right]\times \left[-a,a\right]$ 知 $E$ 为紧致集。
 </div>
 
 <div class = "theorem">$E$ 为有界闭集等价于 $E$ 为紧致集。</div>
-
 <div class = "proof">证明：由上述三条可得。</div>
 
 注：上述证明可推广到任意有限维欧几里得空间，即海涅-博雷尔定理。<br/>
 
 <div class = "theorem">$E$ 为有界闭集等价于 $E$ 的任一无穷子集均有聚点且聚点恒属于 $E$。</div>
-
 <div class = "proof">
 证明：<br/>
 充分性：若 $E$ 为有界闭集，则 $E$ 的任一无穷子集 $E'$ 也有界。由聚点定理，$E'$ 有聚点，且 $E'$ 的聚点也为 $E$ 的聚点，由 $E$ 为闭集知恒属于 $E$。<br/>
 必要性：<br/>
-<span style="width:30px; display:inline-block"></span>若 $E$ 不是有界集，则存在 $\left\{P_n\right\}$ 满足 $\forall n\in \mathbb{N}^{\star}, \rho\left(O,P_n\right)\gt n$，则 $\left\{P_n\right\}$ 无聚点。故 $E$ 为有界集。<br/>
-<span style="width:30px; display:inline-block"></span>若 $E$ 不是无穷点集，则 $E$ 无聚点。否则 $E$ 是自身的无穷子集，聚点恒属于 $E$。故 $E$ 为闭集。
+<span style = "width: 30px; display: inline-block"></span>若 $E$ 不是有界集，则存在 $\left\{P_n\right\}$ 满足 $\forall n\in \mathbb{N}^{\star}, \rho\left(O,P_n\right)\gt n$，则 $\left\{P_n\right\}$ 无聚点。故 $E$ 为有界集。<br/>
+<span style = "width: 30px; display: inline-block"></span>若 $E$ 不是无穷点集，则 $E$ 无聚点。否则 $E$ 是自身的无穷子集，聚点恒属于 $E$。故 $E$ 为闭集。
 </div>
 
 </body>
