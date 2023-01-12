@@ -11,12 +11,8 @@ textarea {
 	resize: none;
 }
 
-a:link {
+a {
 	text-decoration: none;
 	font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
-}
-
-a:visited {
-	text-decoration: none;
 	color: green;
 }
