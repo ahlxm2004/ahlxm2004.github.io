@@ -286,8 +286,8 @@ $
 \begin{aligned}
 \int\dfrac{\mathrm{d}x}{xR} &= \int\dfrac{\mathrm{d}x}{x^2\sqrt{a+\dfrac{b}{x}+\dfrac{c}{x^2}}}\\
 &= \int\dfrac{\mathrm{d}x}{x^2\sqrt{-\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)^2+a-\frac{b^2}{4c}}}\\
-&= \int\left[1-\dfrac{\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)^2}{a-\dfrac{b^2}{4c}}\right]^{-\dfrac{1}{2}}\cdot\dfrac{\sqrt{\left\vert c\right\vert}}{\sqrt{a-\dfrac{b^2}{4c}}}\cdot\dfrac{1}{x^2}\cdot \dfrac{1}{\sqrt{a-\dfrac{b^2}{4c}}}\cdot\dfrac{\sqrt{a-\dfrac{b^2}{4c}}}{\sqrt{\left\vert c\right\vert}}\mathrm{d}x\\
-&= \dfrac{-\arcsin\left[\sqrt{\dfrac{1}{a-\dfrac{b^2}{4c}}}\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)\right]}{\sqrt{\left\vert c\right\vert}}+C\\
+&= \int\left[1-\dfrac{\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)^2}{a-\frac{b^2}{4c}}\right]^{-\dfrac{1}{2}}\cdot\dfrac{\sqrt{\left\vert c\right\vert}}{\sqrt{a-\frac{b^2}{4c}}}\cdot\dfrac{1}{x^2}\cdot \dfrac{1}{\sqrt{a-\frac{b^2}{4c}}}\cdot\dfrac{\sqrt{a-\frac{b^2}{4c}}}{\sqrt{\left\vert c\right\vert}}\mathrm{d}x\\
+&= \dfrac{-\arcsin\left[\sqrt{\dfrac{1}{a-\frac{b^2}{4c}}}\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)\right]}{\sqrt{\left\vert c\right\vert}}+C\\
 &= \dfrac{1}{\sqrt{\left\vert c\right\vert}}\arcsin\left(\dfrac{bx+2c}{x\sqrt{b^2-4ac}}\right)+C \left(x\gt 0,a\neq 0,c\lt 0,b^2-4ac\gt 0\right)
 \end{aligned}
 $
@@ -381,15 +381,15 @@ $
 <br/>
 $
 \begin{aligned}
-\int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{1+\dfrac{1}{n}}} &= \int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{\dfrac{1}{n}}} + \int x\left(-\dfrac{1}{n}\right)\left(1+x^n\right)^{-1-\dfrac{1}{n}}\mathrm{d}\left(x^n\right)\\
-&= \int\left(1+x^n\right)^{-\dfrac{1}{n}}\mathrm{d}x+\int x\mathrm{d}\left(\left(1+x^n\right)^{-\dfrac{1}{n}}\right)\\
+\int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{1+\dfrac{1}{n}}} &= \int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{\dfrac{1}{n}}} + \int x\left(-\frac{1}{n}\right)\left(1+x^n\right)^{-1-\dfrac{1}{n}}\mathrm{d}\left(x^n\right)\\
+&= \int\left(1+x^n\right)^{-\dfrac{1}{n}}\mathrm{d}x+\int x\mathrm{d}\left(\left(1+x^n\right)^{-\frac{1}{n}}\right)\\
 &= \dfrac{x}{\sqrt[n]{1+x^n}} + C
 \end{aligned}
 $
 <br/>
 $
 \begin{aligned}
-\int\dfrac{\mathrm{d}x}{\left(1-x^n\right)^{1+\dfrac{1}{n}}} = \dfrac{x}{\sqrt[n]{1-x^n}} + C
+\int\dfrac{\mathrm{d}x}{\left(1-x^n\right)^{1+\frac{1}{n}}} = \dfrac{x}{\sqrt[n]{1-x^n}} + C
 \end{aligned}
 $
 <br/>
@@ -475,10 +475,10 @@ $
 <br/>
 $
 \begin{aligned}
-\int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\dfrac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
-&= \mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}+C
+\int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\frac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
+&= \mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}+C
 \end{aligned}
 $
 <br/>
@@ -506,10 +506,10 @@ $
 
 $
 \begin{aligned}
-\int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\dfrac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
-&= \mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}+C
+\int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\frac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
+&= \mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}+C
 \end{aligned}
 $
 <br/>
