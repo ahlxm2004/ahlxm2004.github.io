@@ -1,6 +1,7 @@
 body {
 	margin: 3% 5% 5% 5%;
 	overflow-x: hidden;
+	line-height: 1.7;
 }
 
 textarea {
@@ -8,4 +9,15 @@ textarea {
 	height: 200px;
 	display: inline-block;
 	resize: none;
+}
+
+a:link {
+	text-decoration: none;
+	color: green;
+	font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+}
+
+a:visited {
+	text-decoration: none;
+	color: green;
 }
