@@ -9,7 +9,7 @@ blockquote {
 	padding: 5px 10px;
 }
 
-.defination {
+.definition {
 	display: list-item;
 	list-style: disc inside none;
 	list-style-type: square;
