@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8"> 
+<link type = "text/css" rel = "stylesheet" href = "../../../../additional_files/CSS/basic.css"></link>
+<link type = "text/css" rel = "stylesheet" href = "Mathematical_Analysis.css"></link>
+<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+<script type = "text/javascript" async src="../../../../additional_files/MathJax/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+
+<body>
+
+一些数学杂技而已。用作收集。<br/>
+过于简单的（如求导公式反过来）就不记录了。<br/>
+
+
+<div class = "subtitle"> 一、三角函数类</div>
+
+$
+\begin{aligned}
+\int\sin^n x\mathrm{d}x &= -\int\sin^{n-1}x\mathrm{d}\left(\cos x\right)\\
+&= -\sin^{n-1}x\cos x+\left(n-1\right)\int\cos^2 x\sin^{n-2}x\mathrm{d}x\\
+&= -\sin^{n-1}x\cos x+\left(n-1\right)\int\sin^{n-2}x\mathrm{d}x-\left(n-1\right)\int\sin^n x\mathrm{d}x\\
+&= -\dfrac{\sin^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\int\sin^{n-2}x\mathrm{d}x+C \left(n\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\cos^n x\mathrm{d}x = \dfrac{\cos^{n-1}x\sin x}{n}+\dfrac{n-1}{n}\int\cos^{n-2}x\mathrm{d}x+C \left(n\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\tan x\mathrm{d}x = -\ln\left\vert\cos x\right\vert+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\tan^n x\mathrm{d}x &= \int\tan^{n-2}x\sec^2 x\mathrm{d}x-\int\tan^{n-2}x\mathrm{d}x\\
+&= \int\tan^{n-2}\mathrm{d}\left(\tan x\right)-\int\tan^{n-2}x\mathrm{d}x\\
+&= \dfrac{\tan^{n-1}x}{n-1}-\int\tan^{n-2}x\mathrm{d}x+C \left(n\neq 1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\cot x\mathrm{d}x = \ln\left\vert\sin x\right\vert+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\cot^n x\mathrm{d}x = -\dfrac{\cot^{n-1}x}{n-1}-\int\cot^{n-2}x\mathrm{d}x \left(n\neq 1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sec x\mathrm{d}x = \int\dfrac{\mathrm{d}\left(\tan x+\sec x\right)}{\tan x+\sec x} = \ln\left\vert\tan x+\sec x\right\vert+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sec^n x\mathrm{d}x &= \int\sec^{n-2} x\mathrm{d}\left(\tan x\right)\\
+&= \sec^{n-2}x\tan x-\left(n-2\right)\int\left(\sec^2 x-1\right)\sec^{n-2} x\mathrm{d}x\\
+&= \dfrac{\sec^{n-2} x\tan x}{n-1}+\dfrac{n-2}{n-1}\int\sec^{n-2}x\mathrm{d}x+C \left(n\neq 1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\csc x\mathrm{d}x = -\int\dfrac{\mathrm{d}\left(\cot x+\csc x\right)}{\cot x+\csc x} = -\ln\left\vert\cot x+\csc x\right\vert+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\csc^n x\mathrm{d}x = -\dfrac{\csc^{n-2} x\cot x}{n-1}+\dfrac{n-2}{n-1}\int\csc^{n-2}x\mathrm{d}x+C \left(n\neq 1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\arcsin^n x\mathrm{d}x &= x\arcsin^n x-\int n\arcsin^{n-1}x\cdot\dfrac{x}{\sqrt{1-x^2}}\mathrm{d}x\\
+&= x\arcsin^n x+n\int\arcsin^{n-1} x\mathrm{d}\left(\sqrt{1-x^2}\right)\\
+&= x\arcsin^n x+n\sqrt{1-x^2}\arcsin^{n-1} x-n\left(n-1\right)\int\arcsin^{n-2} x\mathrm{d}x+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\arccos^n x\mathrm{d}x = x\arccos^n x-n\sqrt{1-x^2}\arccos^{n-1} x-n\left(n-1\right)\int\arccos^{n-2} x\mathrm{d}x+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\arctan x\mathrm{d}x &= x\arctan x-\int\dfrac{x\mathrm{d}x}{x^2+1}\\
+&= x\arctan x-\dfrac{\ln\left(x^2+1\right)}{2}+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{\tan x}\mathrm{d}x &= \int\dfrac{\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x\\
+&= \dfrac{1}{2}\left(\int\dfrac{\cos x+\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x - \int\dfrac{\cos x-\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x\right)\\
+&= \dfrac{1}{\sqrt{2}}\left(\dfrac{\mathrm{d}\left(\sin x-\cos x\right)}{\sqrt{1-\left(\sin x-\cos x\right)^2}} + \dfrac{\mathrm{d}\left(\sin x+\cos x\right)}{\sqrt{\left(\sin x+\cos x\right)^2-1}}\right)\\
+&= \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)-\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left[0,\dfrac{\pi}{2}\right]\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{\cot x}\mathrm{d}x = \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)+\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left[0,\dfrac{\pi}{2}\right]\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\sin x+\cos x}{1-\sin x\cos x}\mathrm{d}x &= 2\int\dfrac{\mathrm{d}\left(\sin x-\cos x\right)}{1+\left(\sin x-\cos x\right)^2}\\
+&= 2\arctan\left(\sin x-\cos x\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{a\sin x+b\cos x} &= -\int\dfrac{\mathrm{d}\left(a\cos x-b\sin x\right)}{a^2+b^2-\left(a\cos x-b\sin x\right)^2}\\
+&= -\dfrac{1}{2\sqrt{a^2+b^2}}\ln\left(\dfrac{\sqrt{a^2+b^2}+a\cos x-b\sin x}{\sqrt{a^2+b^2}-a\cos x+b\sin x}\right)+C \left(a^2+b^2\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{m\sin x+n\cos x}{a\sin x+b\cos x}\mathrm{d}x &= \int\left(\dfrac{am+bn}{a^2+b^2}+\dfrac{an-bm}{a^2+b^2}\cdot\dfrac{a\cos x-b\sin x}{a\sin x+b\cos x}\right)\mathrm{d}x\\
+&= \dfrac{am+bn}{a^2+b^2}x+\dfrac{an-bm}{a^2+b^2}\ln\left\vert a\sin x+b\cos x\right\vert+C \left(a^2+b^2\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{m\sin^2 x+n\cos^2 x}{a\sin^2 x+b\cos^2 x}\mathrm{d}x &= \int\dfrac{m\tan^2 x+n}{a\tan^2 x+b}\mathrm{d}x\\
+&= \int\left(\dfrac{m-n}{a-b}+\dfrac{an-bm}{a-b}\cdot\dfrac{\tan^2 x+1}{a\tan^2 x+b}\right)\mathrm{d}x\\
+&= \dfrac{m-n}{a-b}x+\dfrac{an-bm}{a-b}\int\dfrac{\mathrm{d}\left(\tan x\right)}{a\tan^2 x+b}+C \left(a\neq b\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\sin^3 x\mathrm{d}x}{\sin x+\cos x} &= \dfrac{1}{2}\left(\int\dfrac{\cos^3 x+\sin^3 x}{\cos x+\sin x}\mathrm{d}x-\int\dfrac{\cos^3 x-\sin^3 x}{\cos x+\sin x}\mathrm{d}x\right)\\
+&= \dfrac{1}{2}\left[x-\dfrac{\sin^2 x}{2}-\int\dfrac{\cos x-\sin x}{\cos x+\sin x}\left(1+\dfrac{\sin 2x}{2}\right)\mathrm{d}x\right]\\
+&= \dfrac{1}{2}\left[x-\dfrac{\sin^2 x}{2}-\int\dfrac{\cos 2x\left(1+\dfrac{\sin 2x}{2}\right)\mathrm{d}x}{1+\sin 2x}\right]\\
+&= \dfrac{1}{2}\left[x-\dfrac{\sin^2 x}{2}-\dfrac{1}{4}\int\left(1+\dfrac{1}{1+\sin 2x}\right)\mathrm{d}\sin 2x\right]\\
+&= \dfrac{x}{2}-\dfrac{\sin^2 x}{4}-\dfrac{\sin x\cos x}{4}-\dfrac{\ln\left\vert\sin x+\cos x\right\vert}{4}+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\cos^3 x\mathrm{d}x}{\sin x+\cos x} &= \dfrac{1}{2}\left(\int\dfrac{\cos^3 x+\sin^3 x}{\cos x+\sin x}\mathrm{d}x+\int\dfrac{\cos^3 x-\sin^3 x}{\cos x+\sin x}\mathrm{d}x\right)\\
+&= \dfrac{x}{2}-\dfrac{\sin^2 x}{4}+\dfrac{\sin x\cos x}{4}+\dfrac{\ln\left\vert\sin x+\cos x\right\vert}{4}+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sin^3 x+\cos^3 x} &= \int\dfrac{\sin^2 x+\cos^2 x}{\left(\sin x+\cos x\right)\left(1-\sin x\cos x\right)}\mathrm{d}x\\
+&= \dfrac{2}{3}\int\dfrac{\mathrm{d}x}{\sin x+\cos x}+\dfrac{1}{3}\int\dfrac{\sin x+\cos x}{1-\sin x\cos x}\mathrm{d}x\\
+&= -\dfrac{1}{3\sqrt{2}}\ln\left(\dfrac{\sqrt{2}-\sin x+\cos x}{\sqrt{2}+\sin x-\cos x}\right)+\dfrac{2}{3}\arctan\left(\sin x-\cos x\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\sin x}{\sin^3 x+\cos^3 x}\mathrm{d}x &= \dfrac{1}{2}\int\dfrac{\mathrm{d}x}{1-\sin x\cos x}-\int\dfrac{\mathrm{d}\left(\sin x+\cos x\right)}{\left(\sin x+\cos x\right)\left[3-\left(\sin x+\cos x\right)^2\right]}\\
+&= \dfrac{1}{\sqrt{3}}\arctan\left(\dfrac{2\tan x-1}{\sqrt{3}}\right)-\dfrac{1}{3}\ln\left\vert\sin x+\cos x\right\vert+\dfrac{1}{6}\ln\left(1-\sin x\cos x\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\cos x}{\sin^3 x+\cos^3 x}\mathrm{d}x = \dfrac{1}{\sqrt{3}}\arctan\left(\dfrac{2\tan x-1}{\sqrt{3}}\right)+\dfrac{1}{3}\ln\left\vert\sin x+\cos x\right\vert-\dfrac{1}{6}\ln\left(1-\sin x\cos x\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sin^4 x+\cos^4 x} &= \dfrac{\left(\tan^2 x+1\right)\mathrm{d}\left(\tan x\right)}{\tan^4 x+1}\\
+&= \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{\tan^2 x-1}{\sqrt{2}\tan x}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sin^6 x+\cos^6 x} &= \int\dfrac{\left(\sin x+\cos x\right)^3}{\sin^6 x+\cos^6 x}\mathrm{d}x\\
+&= x+\int\dfrac{3\tan^2 x\mathrm{d}\left(\tan x\right)}{\tan^6 x+1}\\
+&= x+\arctan\left(\tan^3 x\right)+C
+\end{aligned}
+$
+<div class = "subtitle">二、分式类</div>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{x\left(x^n+a\right)} &= \int\dfrac{x^{n-1}\mathrm{d}x}{x^n\left(x^n+a\right)}\\
+&= \dfrac{1}{na}\left(\int\dfrac{\mathrm{d}\left(x^n\right)}{x^n}-\int\dfrac{\mathrm{d}\left(x^n\right)}{x^n+a}\right)\\
+&= \dfrac{1}{a}\ln\left\vert x\right\vert-\dfrac{1}{na}\ln\left\vert x^n+a\right\vert+C \left(n\neq 0,a\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^n} &= \dfrac{1}{a}\left[\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^{n-1}}-\int\dfrac{x^2\mathrm{d}x}{\left(x^2+a\right)^n}\right]\\
+&=\dfrac{1}{a}\left[\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^{n-1}}-\int x\mathrm{d}\left(\left(x^2+a\right)^{-\left(n-1\right)}\right)\cdot\dfrac{1}{2}\cdot\left(-\dfrac{1}{n-1}\right)\right]\\
+&= \dfrac{1}{a}\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^{n-1}}+\dfrac{1}{2a\left(n-1\right)}\left[\dfrac{x}{\left(x^2+a\right)^{n-1}}-\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^{n-1}}\right]\\
+&= \dfrac{1}{2a\left(n-1\right)}\left[\dfrac{x}{\left(x^2+a\right)^{n-1}}+\left(2n-3\right)\int\dfrac{\mathrm{d}x}{\left(x^2+a\right)^{n-1}}\right]+C \left(n\neq 1,a\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{x^2+1}{x^4+1}\mathrm{d}x &= \int\dfrac{x^2}{x^4+1}\mathrm{d}\left(x-\dfrac{1}{x}\right)\\
+&= \int\dfrac{\mathrm{d}\left(x-\dfrac{1}{x}\right)}{\left(x-\dfrac{1}{x}\right)^2+2}\\
+&= \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{x^2-1}{\sqrt{2}x}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{x^2-1}{x^4+1}\mathrm{d}x = -\dfrac{1}{2\sqrt{2}}\ln\left(\dfrac{x^2+\sqrt{2}x+1}{x^2-\sqrt{2}x+1}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\left(x+a\right)^m\left(x+b\right)^n} &= -\dfrac{1}{n-1}\int\dfrac{1}{\left(x+a\right)^m}\mathrm{d}\left(\dfrac{1}{\left(x+b\right)^{n-1}}\right)\\
+&= -\dfrac{1}{\left(n-1\right)\left(x+a\right)^m\left(x+b\right)^{n-1}} - \dfrac{m}{n-1}\int\dfrac{\mathrm{d}x}{\left(x+a\right)^{m+1}\left(x+b\right)^{n-1}} + C \left(n\neq 1\right)
+\end{aligned}
+$
+
+<div class = "subtitle">三、根号类</div>
+
+为简化形式，令 $R=\sqrt{ax^2+bx+c}$。<br/>
+$
+\begin{aligned}
+\int\dfrac{1}{\sqrt{x^2+a^2}}\mathrm{d}x &= \int\dfrac{\mathrm{d}\left(a\tan\theta\right)}{\sqrt{\left(a\tan\theta\right)^2+a^2}} = \int\dfrac{\mathrm{d}\theta}{\cos\theta}\\
+&= \ln\left(x+\sqrt{x^2+a^2}\right)+C  \left(a\gt 0,\cos\theta\ge 0\right)
+\end{aligned}$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{1}{\sqrt{x^2-a^2}}\mathrm{d}x &= \int\dfrac{\mathrm{d}\dfrac{a}{\cos\theta}}{\sqrt{\left(\dfrac{a}{\cos\theta}\right)^2-a^2}} = \int\sec\theta\mathrm{d}\theta\\
+&= \ln\left\vert x+\sqrt{x^2-a^2}\right\vert+C \left(a\gt 0,\tan\theta\ge 0\right)
+\end{aligned}
+$
+<br/>
+$\begin{aligned}\int\dfrac{1}{\sqrt{a^2-x^2}}\mathrm{d}x = \arcsin\left(\dfrac{x}{a}\right)+C\end{aligned} \left(a\gt 0\right)$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{x^2+a^2}\mathrm{d}x &= x\sqrt{x^2+a^2} + a^2\int\dfrac{\mathrm{d}x}{\sqrt{x^2+a^2}} - \int\sqrt{x^2+a^2}\mathrm{d}x\\
+&= \dfrac{x\sqrt{x^2+a^2}+a^2\ln\left(x+\sqrt{x^2+a^2}\right)}{2}+C\left(a\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{x^2-a^2}\mathrm{d}x &= x\sqrt{x^2-a^2} - a^2\int\dfrac{\mathrm{d}x}{\sqrt{x^2-a^2}} - \int\sqrt{x^2-a^2}\mathrm{d}x\\
+&= \dfrac{x\sqrt{x^2-a^2}-a^2\ln\left\vert x+\sqrt{x^2-a^2}\right\vert}{2}+C \left(a\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{a^2-x^2}\mathrm{d}x &= x\sqrt{a^2-x^2} + a^2\int\dfrac{\mathrm{d}x}{\sqrt{a^2-x^2}} - \int\sqrt{a^2-x^2}\mathrm{d}x\\
+&= \dfrac{x\sqrt{a^2-x^2}+a^2\arcsin\left(\dfrac{x}{a}\right)}{2}+C \left(a\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{xR} &= \int\dfrac{\mathrm{d}x}{x^2\sqrt{a+\dfrac{b}{x}+\dfrac{c}{x^2}}}\\
+&= \int\dfrac{\mathrm{d}x}{x^2\sqrt{-\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)^2+a-\frac{b^2}{4c}}}\\
+&= \int\left[1-\dfrac{\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)^2}{a-\dfrac{b^2}{4c}}\right]^{-\dfrac{1}{2}}\cdot\dfrac{\sqrt{\left\vert c\right\vert}}{\sqrt{a-\dfrac{b^2}{4c}}}\cdot\dfrac{1}{x^2}\cdot \dfrac{1}{\sqrt{a-\dfrac{b^2}{4c}}}\cdot\dfrac{\sqrt{a-\dfrac{b^2}{4c}}}{\sqrt{\left\vert c\right\vert}}\mathrm{d}x\\
+&= \dfrac{-\arcsin\left[\sqrt{\dfrac{1}{a-\dfrac{b^2}{4c}}}\left(\dfrac{\sqrt{\left\vert c\right\vert}}{x}-\dfrac{b}{2\sqrt{\left\vert c\right\vert}}\right)\right]}{\sqrt{\left\vert c\right\vert}}+C\\
+&= \dfrac{1}{\sqrt{\left\vert c\right\vert}}\arcsin\left(\dfrac{bx+2c}{x\sqrt{b^2-4ac}}\right)+C \left(x\gt 0,a\neq 0,c\lt 0,b^2-4ac\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{xR} = -\dfrac{1}{\sqrt{c}}\ln\left\vert\dfrac{bx+2c+2\sqrt{c}R}{x}\right\vert+C \left(x\gt 0,a\neq 0,c\gt 0,b^2-4ac\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{x\sqrt{ax^2+bx}} &= \int\dfrac{\mathrm{d}x}{x^2\sqrt{a+\dfrac{b}{x}}} = -\dfrac{2}{b}\sqrt{a+\dfrac{b}{x}}+C \left(x\gt 0,a\neq 0,b\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{x^m}{R}\mathrm{d}x &= \dfrac{1}{am}\left[\int\dfrac{R^2\left(m-1\right)x^{m-2}+ax^m+\dfrac{b}{2}x^{m-1}}{R}-b\left(m-\dfrac{1}{2}\right)\int\dfrac{x^{m-1}}{R}-c\left(m-1\right)\int\dfrac{x^{m-2}}{R}\right]+C\\
+&= \dfrac{1}{am}\left[x^{m-1}R - b\left(m-\dfrac{1}{2}\right)\int\dfrac{x^{m-1}}{R}\mathrm{d}x - c\left(m-1\right)\int\dfrac{x^{m-2}}{R}\mathrm{d}x\right] + C \left(a\neq 0,m\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{x^m}{R}\mathrm{d}x = \dfrac{1}{c\left(m+1\right)}\left[x^{m+1}R - b\left(m+\dfrac{3}{2}\right)\int\dfrac{x^{m+1}}{R}\mathrm{d}x - a\left(m+2\right)\int\dfrac{x^{m+2}}{R}\mathrm{d}x\right] + C \left(c\neq 0,m\neq -1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{R^{2n+1}} &= \dfrac{1}{2c-\dfrac{b^2}{2a}}\left(-\int\dfrac{2ax^2+bx}{R^{2n+1}}\mathrm{d}x+2\int\dfrac{\mathrm{d}x}{R^{2n-1}}-\dfrac{b}{2a}\int\dfrac{2ax+b}{R^{2n+1}}\mathrm{d}x\right)+C\\
+&= \dfrac{1}{2c-\dfrac{b^2}{2a}}\left[\dfrac{2}{2n-1}\left(\dfrac{x}{R^{2n-1}}-\int\dfrac{\mathrm{d}x}{R^{2n-1}}\right)+2\int\dfrac{\mathrm{d}x}{R^{2n-1}}+\dfrac{b}{a\left(2n-1\right)}\cdot\dfrac{1}{R^{2n-1}}\right]+C\\
+&= -\dfrac{1}{\left(b^2-4ac\right)\left(2n-1\right)}\left[\dfrac{4ax+2b}{R^{2n-1}}+8\left(n-1\right)a\int\dfrac{\mathrm{d}x}{R^{2n-1}}\right]+C \left(n\neq\dfrac{1}{2},b^2-4ac\neq 0\right)
+\end{aligned}
+$
+<blockquote>
+题外话：<br/>
+$\forall n,m\in\mathrm{Z},2\nmid n,a\neq 0,b^2-4ac\neq 0$，设 $S\left(n,m\right)=\int R^{n}x^m\mathrm{d}x$，则 $S\left(\pm 1,0\right),S\left(-1,-1\right)$ 已知。<br/>
+则 $S\left(-1,m\right)$ 已知。$n\ge 0$ 时 $S\left(n,m\right)=aS\left(n-2,m+2\right)+bS\left(n-2,m+1\right)+c\left(n-2,m\right)$ 已知。<br/>
+$S\left(n,0\right)$ 已知。$S\left(n,1\right)=\dfrac{1}{2a}\left(\dfrac{2R^{n+2}}{n+2}-bS\left(n,0\right)\right)$ 已知。<br/>
+同时可知，$c\neq 0$ 时 $S\left(n,m\right)$ 可转移至 $S\left(n+2,m\right),S\left(n,m+2\right),S\left(n,m+1\right)$。<br/>
+$c=0$ 时 $b\neq 0$，可转移至 $S\left(n,m+1\right),S\left(n+2,m-1\right)$。<br/>
+对 $R^nx^m$ 求导可知 $n\neq -2$ 时 $S\left(n,m\right)$ 可转移至 $S\left(n,m-1\right),S\left(n+2,m-3\right)$。<br/>
+综上，所有 $S\left(n,m\right)$ 均可积。<br/>
+事实上，所有仅含 $R$ 和 $x$ 的有理分式均可积（消去一次项后三角换元即可）。但计算量...
+</blockquote>
+$
+\begin{aligned}
+\int\sqrt{\dfrac{a}{x}+1}\mathrm{d}x &= \int\dfrac{2x+a}{2\sqrt{x\left(x+a\right)}} + a\int\dfrac{\mathrm{d}x}{2\sqrt{x\left(x+a\right)}}\\
+&= \sqrt{x\left(x+a\right)} + a\ln\left(\sqrt{x}+\sqrt{x+a}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\sqrt{\dfrac{a}{x}-1}\mathrm{d}x &= \int\sqrt{\dfrac{a}{a\sin^2 t}-1}\mathrm{d}\left(a\sin^2 t\right)\\
+&= 2a\int\dfrac{\cos t}{\sin t}\cdot\sin t\cos t\mathrm{d}t\\
+&= \sqrt{x\left(a-x\right)}+a\arcsin\sqrt{\dfrac{x}{a}}+C \left(a\gt 0,t\in\left[0,\dfrac{\pi}{2}\right]\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\left(ax^2+b\right)\sqrt{cx^2+d}} &= \dfrac{1}{d}\int\dfrac{cx^2+d}{ax^2+b}\mathrm{d}\left(\dfrac{x}{\sqrt{cx^2+d}}\right)\\
+&= \int\dfrac{\mathrm{d}\left(\dfrac{x}{\sqrt{cx^2+d}}\right)}{b+\left(ad-bc\right)\left(\dfrac{x}{\sqrt{cx^2+d}}\right)^2} \left(b^2+d^2\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\sqrt{1+x^4}}{1-x^4}\mathrm{d}x &= \dfrac{1}{2}\int\dfrac{\sqrt{x^2+\dfrac{1}{x^2}}}{1-x^4}\mathrm{d}\left(x^2\right)\cdot\dfrac{x}{\left\vert x\right\vert}\\
+&= -\dfrac{1}{2}\int\dfrac{\sqrt{x^2+\dfrac{1}{x^2}}}{\left(x^2+\dfrac{1}{x^2}\right)^2-4}\mathrm{d}\left(x^2+\dfrac{1}{x^2}\right)\cdot\dfrac{x}{\left\vert x\right\vert}\\
+&= -\dfrac{1}{2}\int\left(\dfrac{1}{x^2+\dfrac{1}{x^2}-2}+\dfrac{1}{x^2+\dfrac{1}{x^2}+2}\right)\mathrm{d}\left(\sqrt{x^2+\dfrac{1}{x^2}}\right)\cdot\dfrac{x}{\left\vert x\right\vert}\\
+&= -\dfrac{1}{4\sqrt{2}}\ln\left(\dfrac{\sqrt{1+x^4}-\sqrt{2}x}{\sqrt{1+x^4}+\sqrt{2}x}\right)-\dfrac{1}{2\sqrt{2}}\arctan\left(\dfrac{\sqrt{1+x^4}}{\sqrt{2}x}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\sqrt{1-x^4}}{1+x^4}\mathrm{d}x = -\dfrac{1}{4}\arctan\left(\dfrac{1-x^4-2x^2}{2x\sqrt{1-x^4}}\right)+\dfrac{1}{8}\ln\left(\dfrac{1-x^4+2x^2+2x\sqrt{1-x^4}}{1-x^4+2x^2-2x\sqrt{1-x^4}}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sqrt[3]{\left(x-1\right)\left(x+1\right)^2}} &= -3\int\dfrac{\mathrm{d}\left(\sqrt[3]{\dfrac{x+1}{x-1}}\right)}{\left(\sqrt[3]{\dfrac{x+1}{x-1}}\right)^3+1}\\
+&= -\dfrac{1}{2}\ln\left\vert x-1\right\vert-\dfrac{3}{2}\ln\left\vert\sqrt[3]{\dfrac{x+1}{x-1}}-1\right\vert+\sqrt{3}\arctan\left(\dfrac{2\sqrt[3]{\dfrac{x+1}{x-1}}+1}{\sqrt{3}}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{1+\dfrac{1}{n}}} &= \int\dfrac{\mathrm{d}x}{\left(1+x^n\right)^{\dfrac{1}{n}}} + \int x\left(-\dfrac{1}{n}\right)\left(1+x^n\right)^{-1-\dfrac{1}{n}}\mathrm{d}\left(x^n\right)\\
+&= \int\left(1+x^n\right)^{-\dfrac{1}{n}}\mathrm{d}x+\int x\mathrm{d}\left(\left(1+x^n\right)^{-\dfrac{1}{n}}\right)\\
+&= \dfrac{x}{\sqrt[n]{1+x^n}} + C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\left(1-x^n\right)^{1+\dfrac{1}{n}}} = \dfrac{x}{\sqrt[n]{1-x^n}} + C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sqrt[n]{1+x^n}} = \int\dfrac{\mathrm{d}\left(\dfrac{x}{\sqrt[n]{1+x^n}}\right)}{1-\left(\dfrac{x}{\sqrt[n]{1+x^n}}\right)^n}
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\mathrm{d}x}{\sqrt[n]{1-x^n}} = \int\dfrac{\mathrm{d}\left(\dfrac{x}{\sqrt[n]{1-x^n}}\right)}{1+\left(\dfrac{x}{\sqrt[n]{1-x^n}}\right)^n}
+\end{aligned}
+$
+
+<div class = "subtitle">四、对数类</div>
+$
+\begin{aligned}
+\int\ln\left(x+\sqrt{x^2+a^2}\right)\mathrm{d}x &= x\ln\left(x+\sqrt{x^2+a^2}\right)-\int\dfrac{x\mathrm{d}x}{\sqrt{x^2+a^2}}\\
+&= x\ln\left(x+\sqrt{x^2+a^2}\right)-\sqrt{x^2+a^2}+C \left(a\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\ln\left(x+\sqrt{x^2-a^2}\right)\mathrm{d}x = x\ln\left(x+\sqrt{x^2-a^2}\right)-\sqrt{x^2-a^2}+C \left(a\gt 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{1-\ln x}{\left(x+\ln x\right)^2}\mathrm{d}x &= \dfrac{x^2}{\left(x+\ln x\right)^2}\mathrm{d}\left(\dfrac{\ln x}{x}\right)\\
+&= \dfrac{1}{\left(1+\dfrac{\ln x}{x}\right)^2}\mathrm{d}\left(\dfrac{\ln x}{x}\right)\\
+&= -\dfrac{x}{x+\ln x}+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\ln\left(\sqrt{1+x}+\sqrt{1-x}\right)\mathrm{d}x &= \int\ln\left(\sqrt{1+\sin 2t}+\sqrt{1-\sin 2t}\right)\mathrm{d}\left(\sin 2t\right)\\
+&= \int\ln\left(2\cos t\right)\mathrm{d}\left(\sin 2t\right)\\
+&= \sin 2t\ln\left(2\cos t\right)+t-\dfrac{\sin 2t}{2}+C\\
+&= \dfrac{\ln 2-1}{2}x+\dfrac{\arcsin x}{2}+\dfrac{x}{2}\ln\left(\sqrt{1-x^2}+1\right)+C \left(t\in\left[-\dfrac{\pi}{4},\dfrac{\pi}{4}\right]\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\ln\left(\sqrt{1-x}-\sqrt{x}\right)\mathrm{d}x &= x\ln\left(\sqrt{1-x}-\sqrt{x}\right)-\int\sin^2 t\mathrm{d}\left(\ln\left(\cos t-\sin t\right)\right)\\
+&= x\ln\left(\sqrt{1-x}-\sqrt{x}\right)+\dfrac{1}{2}\left[\int \dfrac{\sin t+\cos t}{\cos t-\sin t}\mathrm{d}t - \int\left(\cos^2 t-\sin^2 t\right)\dfrac{\sin t+\cos t}{\cos t-\sin t}\mathrm{d}t\right]\\
+&= x\ln\left(\sqrt{1-x}-\sqrt{x}\right) - \dfrac{\ln\left(\cos t-\sin t\right)}{2} - \dfrac{t}{2} + \dfrac{\cos 2t}{4} + C\\
+&= \left(x-\dfrac{1}{2}\right)\ln\left(\sqrt{1-x}-\sqrt{x}\right) - \dfrac{\arcsin\sqrt{x}}{2} - \dfrac{x}{2} + C \left(t\in\left[0,\dfrac{\pi}{4}\right]\right)
+\end{aligned}
+$
+
+<div class = "subtitle">五、混合类</div>
+$
+\begin{aligned}
+\int\mathrm{e}^{ax}\sin bx\mathrm{d}x&=\mathrm{Im}\left\{\int\mathrm{e}^{\left(a+b\mathrm{i}\right)x}\mathrm{d}x\right\}\\
+&= \mathrm{Im}\left\{\dfrac{\mathrm{e}^{ax}\left(\cos bx+\mathrm{i}\sin bx\right)}{a+b\mathrm{i}}\right\}+C\\
+&= \dfrac{\mathrm{e}^{ax}\left(a\sin bx-b\cos bx\right)}{a^2+b^2}+C \left(a^2+b^2\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\mathrm{e}^{ax}\cos bx\mathrm{d}x=\dfrac{\mathrm{e}^{ax}\left(a\cos bx+b\sin bx\right)}{a^2+b^2}+C \left(a^2+b^2\neq 0\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int x^n\sin\left(\ln x\right)\mathrm{d}x &= \dfrac{1}{n+1}x^{n+1}\sin\left(\ln x\right)-\dfrac{1}{\left(n+1\right)^2}\left[x^{n+1}\cos\left(\ln x\right)+\int x^n\sin\left(\ln x\right)\mathrm{d}x\right]\\
+&= \dfrac{\left(n+1\right)\sin\left(\ln x\right)-\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int x^n\cos\left(\ln x\right)\mathrm{d}x = \dfrac{\sin\left(\ln x\right)+\left(n+1\right)\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\dfrac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
+&= \mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{x}{\sqrt{1-x^2}}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}x &= -\int\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}\left(\sqrt{1-x^2}\right)\\
+&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)+\int\dfrac{\mathrm{d}x}{x\sqrt{1-x^2}}\\
+&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)-\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int x^n\sin\left(\ln x\right)\mathrm{d}x &= \dfrac{1}{n+1}x^{n+1}\sin\left(\ln x\right)-\dfrac{1}{\left(n+1\right)^2}\left[x^{n+1}\cos\left(\ln x\right)+\int x^n\sin\left(\ln x\right)\mathrm{d}x\right]\\
+&= \dfrac{\left(n+1\right)\sin\left(\ln x\right)-\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int x^n\cos\left(\ln x\right)\mathrm{d}x = \dfrac{\sin\left(\ln x\right)+\left(n+1\right)\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
+\end{aligned}
+$
+<br/>
+
+$
+\begin{aligned}
+\int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\dfrac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\dfrac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
+&= \dfrac{1}{2}\left(\int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
+&= \mathrm{e}^{\dfrac{x}{2}}\sqrt{\sin x+\cos x}+C
+\end{aligned}
+$
+<br/>
+
+$
+\begin{aligned}
+\int\dfrac{\arctan x}{\left(x+\dfrac{1}{x}\right)^2}\mathrm{d}x &= \int\arctan x\mathrm{d}\left(-\dfrac{x}{2\left(x^2+1\right)}+\dfrac{\arctan x}{2}\right)\\
+&= -\dfrac{x\arctan x}{2\left(x^2+1\right)}+\dfrac{1}{2}\int\dfrac{x\mathrm{d}x}{\left(x^2+1\right)^2}+\dfrac{\arctan^2 x}{4}+C\\
+&= -\dfrac{x\arctan x}{2\left(x^2+1\right)}-\dfrac{1}{4\left(x^2+1\right)}+\dfrac{\arctan^2 x}{4}+C
+\end{aligned}
+$
+
+$
+\begin{aligned}
+\int\dfrac{x}{\sqrt{1-x^2}}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}x &= -\int\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}\left(\sqrt{1-x^2}\right)\\
+&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)+\int\dfrac{\mathrm{d}x}{x\sqrt{1-x^2}}\\
+&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)-\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)+C
+\end{aligned}
+$
+<br/>
+$
+\begin{aligned}
+\int\dfrac{\arctan x}{\left(x+\dfrac{1}{x}\right)^2}\mathrm{d}x &= \int\arctan x\mathrm{d}\left(-\dfrac{x}{2\left(x^2+1\right)}+\dfrac{\arctan x}{2}\right)\\
+&= -\dfrac{x\arctan x}{2\left(x^2+1\right)}+\dfrac{1}{2}\int\dfrac{x\mathrm{d}x}{\left(x^2+1\right)^2}+\dfrac{\arctan^2 x}{4}+C\\
+&= -\dfrac{x\arctan x}{2\left(x^2+1\right)}-\dfrac{1}{4\left(x^2+1\right)}+\dfrac{\arctan^2 x}{4}+C
+\end{aligned}
+$
+
+</body>
+
+</html>
