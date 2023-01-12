@@ -20,7 +20,7 @@
 众所周知，
 $$\int_{0}^{\pi/2}\sin^{2n}x\mathrm{d}x=\dfrac{\left(2n-1\right)!!}{\left(2n\right)!!}\cdot\dfrac{\pi}{2}$$
 $$\int_{0}^{\pi/2}\sin^{2n+1}x\mathrm{d}x=\dfrac{\left(2n\right)!!}{\left(2n+1\right)!!}$$
-因为 $\sin^{2n+1}x\lt\sin^{2n}x\lt\sin^{2n-1}x$，积分化简得
+由 $\sin^{2n+1}x\lt\sin^{2n}x\lt\sin^{2n-1}x$ 积分化简得
 $$\dfrac{2n}{2n+1}\cdot\dfrac{\pi}{2}\lt\dfrac{\left(\left(2n\right)!!\right)^2}{\left(2n+1\right)\left(\left(2n-1\right)!!\right)^2}\lt\dfrac{\pi}{2}$$
 两侧取极限，由夹逼定理可知
 $$\sqrt{\pi}=\lim\limits_{n\to +\infty}\dfrac{\left(n!\right)^22^{2n}}{\left(2n\right)!\sqrt{n}}$$
@@ -29,8 +29,8 @@ $$\sqrt{\pi}=\lim\limits_{n\to +\infty}\dfrac{\left(n!\right)^22^{2n}}{\left(2n\
 此时已经可以得到一个初步的结论（即斯特林公式）：
 $$n!\sim\sqrt{2\pi n}\left(\dfrac{n}{\mathrm{e}}\right)^n$$
 换个话题，$\forall n\in\mathbb{N}^+,k\in\mathbb{N}^+,\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 的值是否可以用 $\dfrac{1}{n}$ 的幂级数逼近？<br/>
-$n=1$ 时 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 发散，不需要考虑。<br/>
-$n\gt 1$ 时由积分近似，
+$k=1$ 时 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}$ 发散，不需要考虑。<br/>
+$k\gt 1$ 时由积分近似，
 $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O\left(\dfrac{1}{n^k}\right)$$
 设 $m\in\mathbb{N}^+$，存在一组 $A_i$ 使得
 $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}+O\left(\dfrac{1}{n^{m+1}}\right)$$
