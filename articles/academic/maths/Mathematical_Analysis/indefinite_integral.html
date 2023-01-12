@@ -492,38 +492,6 @@ $
 <br/>
 $
 \begin{aligned}
-\int x^n\sin\left(\ln x\right)\mathrm{d}x &= \dfrac{1}{n+1}x^{n+1}\sin\left(\ln x\right)-\dfrac{1}{\left(n+1\right)^2}\left[x^{n+1}\cos\left(\ln x\right)+\int x^n\sin\left(\ln x\right)\mathrm{d}x\right]\\
-&= \dfrac{\left(n+1\right)\sin\left(\ln x\right)-\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
-\end{aligned}
-$
-<br/>
-$
-\begin{aligned}
-\int x^n\cos\left(\ln x\right)\mathrm{d}x = \dfrac{\sin\left(\ln x\right)+\left(n+1\right)\cos\left(\ln x\right)}{n^2+2n+2}+C \left(n\neq -1\right)
-\end{aligned}
-$
-<br/>
-
-$
-\begin{aligned}
-\int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x}{\sqrt{\sin x+\cos x}}\mathrm{d}x &= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + \int\mathrm{e}^{\frac{x}{2}}\dfrac{\cos x-\sin x}{\sqrt{\sin x+\cos x}}\mathrm{d}x\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\int\mathrm{e}^{\frac{x}{2}}\mathrm{d}\left(\sqrt{\sin x+\cos x}\right)\right)\\
-&= \dfrac{1}{2}\left(\int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x + 2\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x} - \int\mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}\mathrm{d}x\right)\\
-&= \mathrm{e}^{\frac{x}{2}}\sqrt{\sin x+\cos x}+C
-\end{aligned}
-$
-<br/>
-
-$
-\begin{aligned}
-\int\dfrac{x}{\sqrt{1-x^2}}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}x &= -\int\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)\mathrm{d}\left(\sqrt{1-x^2}\right)\\
-&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)+\int\dfrac{\mathrm{d}x}{x\sqrt{1-x^2}}\\
-&= -\sqrt{1-x^2}\ln\left(\dfrac{x}{\sqrt{1-x^2}}\right)-\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)+C
-\end{aligned}
-$
-<br/>
-$
-\begin{aligned}
 \int\dfrac{\arctan x}{\left(x+\dfrac{1}{x}\right)^2}\mathrm{d}x &= \int\arctan x\mathrm{d}\left(-\dfrac{x}{2\left(x^2+1\right)}+\dfrac{\arctan x}{2}\right)\\
 &= -\dfrac{x\arctan x}{2\left(x^2+1\right)}+\dfrac{1}{2}\int\dfrac{x\mathrm{d}x}{\left(x^2+1\right)^2}+\dfrac{\arctan^2 x}{4}+C\\
 &= -\dfrac{x\arctan x}{2\left(x^2+1\right)}-\dfrac{1}{4\left(x^2+1\right)}+\dfrac{\arctan^2 x}{4}+C
