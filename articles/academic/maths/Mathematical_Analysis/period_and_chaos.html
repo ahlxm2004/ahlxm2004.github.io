@@ -71,10 +71,10 @@ $n\gt 1$ 时，沿用 $m,l$ 的构造，因为 $\lvert\Delta_m\rvert=2$，周期
 
 <div class = "theorem">$f,n,N,m,l,\left\{x_1,x_2,\cdots,x_n\right\},\left\{y_1,y_2,\cdots,y_n\right\}$ 定义同上，则只要适当选取 $x_1$，按大小排列 $x_i$ 结果必为 $x_{2n}\lt x_{2n-2}\lt\cdots\lt x_{2}\lt x_{0}\lt x_{1}\lt x_{3}\lt\cdots\lt x_{2n+1}$ 或 $x_{2n+1}\lt x_{2n-1}\lt x_{2n-3}\lt\cdots\lt x_1\lt x_0\lt x_2\lt\cdots\lt x_{2n}$。</div>
 <div class = "proof">
-证明：$\forall 1\le k\lt N-2,\lvert f^{\star^k}\rvert=k+2,\Delta l\notin f^{\star^k}$，归纳证明即可。<br/>
+证明：$\forall 1\le k\lt N-2,\lvert f^{\star^k}\rvert=k+2,\Delta l\notin f^{\star^k}$，归纳证明即可。
 </div>
 <img src = "A.png"><br/>
-（图片来自网络，便于理解）<br/>
+（图片来自网络，便于理解）
 
 <div class = "theorem">$f,n,N,m,l,\left\{x_1,x_2,\cdots,x_n\right\},\left\{y_1,y_2,\cdots,y_n\right\}$ 定义同上，则 $\forall k\gt N$，$f$ 有 $k$ 周期点。</div>
 <div class = "proof">
@@ -162,7 +162,7 @@ $t=s$ 时显然成立。$t\lt s$ 时由 $\left(2n+1\right)2^t\succ\left(2m+1\rig
 
 <div class = "theorem">若 $f$ 定义域为 $\left[a,b\right]$ 且无 $2$ 周期点，则 $\forall x\in\left[a,b\right],n\in\mathbb{N}^\star$，$f\left(x\right)$ 与 $x$ 的大小关系与 $f^n\left(x\right)$ 与 $x$ 的大小关系相同。</div>
 <div class = "proof">
-证明：$n=1$ 时显然成立。$n\gt 1$ 时假设对 $1\le m\lt n$ 均成立，<br/>
+证明：$n=1$ 时显然成立。$n\gt 1$ 时假设对 $1\le m\lt n$ 均成立，
 <li>$f\left(x\right)\gt x$ 时，</li>
 <ol>
 <li>若 $f^n\left(x\right)\lt x$，由 $f^n\left(a\right)\ge a$，令 $c=\sup\left\{u\in\left[a,x\right)\mid f^n\left(u\right)=u\right\}$，则 $\forall v\in\left(u,x\right),f^n\left(v\right)\lt v\land f\left(v\right)\neq v$，由 $f\left(x\right)\gt x$ 知 $f\left(v\right)\gt v$，则 $f^{n-1}\left(v\right)\gt v$。取足够靠近 $u$ 的 $v$ 使得 $u\lt v\lt f^{n-1}\left(v\right)\lt x$，则 $f^n\left(v\right)\gt f^{n-1}\left(v\right)\gt v$，矛盾。</li>
@@ -192,7 +192,9 @@ $t=s$ 时显然成立。$t\lt s$ 时由 $\left(2n+1\right)2^t\succ\left(2m+1\rig
 
 <div class = "theorem">设 $D_f=\mathbb{R}_+$，$f$ 无 $2$ 周期点，存在 $p\le q$ 满足 $p,q$ 均为不动点（可相等），$x\lt p$ 时 $f\left(x\right)\gt x$，$x\gt q$ 时 $f\left(x\right)\lt x$，$f$ 在 $\left(0,p\right)$ 上有界，则 $f$ 恰当收敛。</div>
 <div class = "proof">
-证明：设 $b=\sup\left\{f\left(x\right)\mid x\le q\right\},a=\inf\left\{f\left(x\right)\mid p\le x\le b\right\}$，则 $\forall x\in\mathbb{R}_+,\lim\limits_{n\to +\infty}\sup f^n\left(x\right)\le b$。$\forall x_0\in\mathbb{R}_+$，令 $x_n=f^n\left(x_0\right)$，$\forall \epsilon\gt 0,\exists\delta\gt 0$，当 $x_n$ 不超过 $b+\delta$ 时，$f\left(x_n\right)$ 不会小于 $a-\epsilon$，所以 $\lim\limits_{n\to +\infty}\inf f^n\left(x_0\right)\ge a$。因此 $\forall x\in\mathbb{R}_+,S=\left\{y\mid \exists n\in\mathbb{N},f^n\left(x\right)=y\right\}$ 为紧集，$f$ 在 $S$ 上恰当收敛，即 $f$ 在 $\mathbb{R}_+$ 上恰当收敛。
+证明：设 $b=\sup\left\{f\left(x\right)\mid x\le q\right\},a=\inf\left\{f\left(x\right)\mid p\le x\le b\right\}$，则 $\forall x\in\mathbb{R}_+,\lim\limits_{n\to +\infty}\sup f^n\left(x\right)\le b$。<br/>
+$\forall x_0\in\mathbb{R}_+$，令 $x_n=f^n\left(x_0\right)$，$\forall \epsilon\gt 0,\exists\delta\gt 0$，当 $x_n$ 不超过 $b+\delta$ 时，$f\left(x_n\right)$ 不会小于 $a-\epsilon$，所以 $\lim\limits_{n\to +\infty}\inf f^n\left(x_0\right)\ge a$。<br/>
+因此 $\forall x\in\mathbb{R}_+,S=\left\{y\mid \exists n\in\mathbb{N},f^n\left(x\right)=y\right\}$ 为紧集，$f$ 在 $S$ 上恰当收敛，即 $f$ 在 $\mathbb{R}_+$ 上恰当收敛。
 </div>
 
 <div class = "theorem">若 $f$ 有 $3$ 周期点，则 $f$ 是混沌的。</div>
