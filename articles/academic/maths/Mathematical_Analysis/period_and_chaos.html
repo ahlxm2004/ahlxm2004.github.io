@@ -166,7 +166,9 @@ $t=s$ 时显然成立。$t\lt s$ 时由 $\left(2n+1\right)2^t\succ\left(2m+1\rig
 证明：$n=1$ 时显然成立。$n\gt 1$ 时假设对 $1\le m\lt n$ 均成立，
 <li>$f\left(x\right)\gt x$ 时，</li>
 <ol>
-<li>若 $f^n\left(x\right)\lt x$，由 $f^n\left(a\right)\ge a$，令 $c=\sup\left\{u\in\left[a,x\right)\mid f^n\left(u\right)=u\right\}$，则 $\forall v\in\left(u,x\right),f^n\left(v\right)\lt v\land f\left(v\right)\neq v$，由 $f\left(x\right)\gt x$ 知 $f\left(v\right)\gt v$，则 $f^{n-1}\left(v\right)\gt v$。取足够靠近 $u$ 的 $v$ 使得 $u\lt v\lt f^{n-1}\left(v\right)\lt x$，则 $f^n\left(v\right)\gt f^{n-1}\left(v\right)\gt v$，矛盾。</li>
+<li>若 $f^n\left(x\right)\lt x$，由 $f^n\left(a\right)\ge a$，令 $u=\sup\left\{t\in\left[a,x\right)\mid f^n\left(t\right)=t\right\}$。<br/>
+则 $\forall v\in\left(u,x\right),f^n\left(v\right)\lt v\land f\left(v\right)\neq v$，由 $f\left(x\right)\gt x$ 知 $f\left(v\right)\gt v$，则 $f^{n-1}\left(v\right)\gt v$。<br/>
+取足够靠近 $u$ 的 $v$ 使得 $u\lt v\lt f^{n-1}\left(v\right)\lt x$，则 $f^n\left(v\right)\gt f^{n-1}\left(v\right)\gt v$，矛盾。</li>
 <li>若 $f^n\left(x\right)=x$，则由 Sharkovskii 序可知矛盾。</li>
 </ol>
 <li>$f\left(x\right)\lt x$ 时同理。</li>
