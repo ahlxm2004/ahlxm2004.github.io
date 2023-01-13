@@ -1,6 +1,7 @@
 body {
 	margin: 3% 5% 5% 5%;
 	overflow-x: hidden;
+	overflow-y: scroll;
 	line-height: 1.7;
 }
 
