@@ -79,12 +79,12 @@ $a$ 的唯一性由 $x^n$ 的单调性可知。
 证明：讨论 $m$ 与 $0$ 的大小关系，归纳可得。
 </div>
 
-<div class = "theorem">$\forall x\ge 0,k\in\mathbb{N}^{\star}, \sqrt[km]{x^{kn}}=\sqrt[m]{x^n}$。</div>
+<div class = "theorem">$\forall x\ge 0,n\in\mathbb{N}^{\star},m\in\mathbb{Z},k\in\mathbb{N}^{\star}, \sqrt[kn]{x^{km}}=\sqrt[n]{x^m}$。</div>
 <div class = "proof">
-证明：设 $y=\sqrt[km]{x}$，则 $\sqrt[m]{x^n}=\left(\sqrt[m]{x}\right)^n=y^{kn}$，$\sqrt[km]{x^{kn}}=\left(\sqrt[km]{x}\right)^{kn}=y^{kn}$，得证。
+证明：设 $y=\sqrt[kn]{x}$，则 $\sqrt[n]{x^m}=\left(\sqrt[n]{x}\right)^m=y^{km}$，$\sqrt[kn]{x^{km}}=\left(\sqrt[kn]{x}\right)^{km}=y^{km}$，得证。
 </div>
 
-<div class = "definition">$\forall a\gt 0,n\in\mathbb{Z},m\in\mathbb{N}^{\star},\gcd\left(\lvert n\rvert,m\right)=1$，定义 $a^{\dfrac{n}{m}}=\sqrt[m]{x^n}$。</div>
+<div class = "definition">$\forall a\gt 0,n\in\mathbb{Z},m\in\mathbb{N}^{\star},\gcd\left(\lvert n\rvert,m\right)=1$，定义 $a^{\frac{m}{n}}=\sqrt[n]{x^m}$。</div>
 
 <div class = "theorem">$\forall a\gt 0,n,m\in\mathbb{Q},n\lt m$，则 $a\gt 1$ 时 $a^n\lt a^m$，$a\lt 1$ 时 $a^n\gt a^m$，$a=1$ 时 $a^n=a^m$。</div>
 <div class = "theorem">$\forall a,b\gt 0,n\in\mathbb{Q},a\lt b$，则 $n\gt 0$ 时 $a^n\lt b^n$，$n\lt 0$ 时 $a^n\gt b^n$，$n=0$ 时 $a^n=b^n$。</div>
@@ -97,7 +97,7 @@ $a$ 的唯一性由 $x^n$ 的单调性可知。
 
 <div class = "theorem">$\forall a,b\gt 0,n\in\mathbb{N},ab^n\le\left(\dfrac{a+nb}{n+1}\right)^{n+1}$，当且仅当 $a=b$ 时取等。</div>
 <div class = "proof">
-证明：$\left(\dfrac{a+nb}{n+1}\right)^{n+1}=b^{n+1}\left(1+\dfrac{\dfrac{a}{b}-1}{n+1}\right)^{n+1}\ge ab^n$，取等当且仅当 $\dfrac{a}{b}-1=0$，得证。
+证明：$\left(\dfrac{a+nb}{n+1}\right)^{n+1}=b^{n+1}\left(1+\dfrac{\frac{a}{b}-1}{n+1}\right)^{n+1}\ge ab^n$，取等当且仅当 $\dfrac{a}{b}-1=0$，得证。
 </div>
 
 <div class = "theorem">$\forall n\in\mathbb{N}^{\star},a_1,a_2,\cdots,a_n\ge 0,\dfrac{\sum\limits_{i=1}^n a_i}{n}\ge\sqrt[n]{\prod\limits_{i=1}^n a_i}$，当且仅当 $a_i$ 均相等时取等。</div>
@@ -109,8 +109,8 @@ $n\gt 1$ 时，$\left(\dfrac{\sum\limits_{i=1}^n a_i}{n}\right)^n=\left(\dfrac{a
 <div class = "theorem">设 $a\in\mathbb{Q},x\gt -1$，如果 $0\lt a\lt 1$，则 $\left(1+x\right)^a\le 1+ax$；如果 $a\lt 0$ 或 $a\gt 1$，则 $\left(1+x\right)^a\ge 1+ax$。当且仅当 $x=0$ 时等号成立。</div>
 <div class = "proof">
 证明：$0\lt a\lt 1$ 时，设 $a=\dfrac{m}{n}$，则 $\left(1+x\right)^a=\sqrt[n]{\left(1+x\right)^m\cdot 1^{n-m}}\le\dfrac{m\left(1+x\right)+n-m}{n}=1+ax$，取等当且仅当 $1+x=1$ 即 $x=0$。<br/>
-$a\gt 1$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$ 则 $1+x=1+\dfrac{1}{a}\cdot ax\ge\left(1+ax\right)^{\dfrac{1}{a}}$，得 $\left(1+x\right)^a\ge 1+ax$，当且仅当 $x=0$ 时取等。<br/>
-$a\lt 0$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$，取正整数 $n$ 使 $0\lt -\dfrac{a}{n}\lt 1$，则 $1-\dfrac{a}{n}x\ge\left(1+x\right)^{-\dfrac{a}{n}}$，则 $\left(1+x\right)^{\dfrac{a}{n}}\ge\dfrac{1}{1-\dfrac{a}{n}x}\ge 1+\dfrac{a}{n}x$，则 $\left(1+x\right)^a\ge\left(1+\dfrac{a}{n}x\right)^n\ge 1+ax$，当且仅当 $x=0$ 时取等。
+$a\gt 1$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$ 则 $1+x=1+\dfrac{1}{a}\cdot ax\ge\left(1+ax\right)^{\frac{1}{a}}$，得 $\left(1+x\right)^a\ge 1+ax$，当且仅当 $x=0$ 时取等。<br/>
+$a\lt 0$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$，取正整数 $n$ 使 $0\lt -\dfrac{a}{n}\lt 1$，则 $1-\dfrac{a}{n}x\ge\left(1+x\right)^{-\frac{a}{n}}$，则 $\left(1+x\right)^{\frac{a}{n}}\ge\dfrac{1}{1-\dfrac{a}{n}x}\ge 1+\dfrac{a}{n}x$，则 $\left(1+x\right)^a\ge\left(1+\dfrac{a}{n}x\right)^n\ge 1+ax$，当且仅当 $x=0$ 时取等。
 </div>
 
 <div class = "theorem">$\forall a,b\gt 1,\exists x\in\mathbb{Q}_+,\mathrm{s.t.} a^x\lt b$</div>
@@ -166,7 +166,7 @@ $a\neq 1$ 时，$\forall 0\lt \epsilon\lt a^b$，存在 $\delta\gt 0$，令 $\de
 
 <div class = "definition">设 $\forall n\in\mathbb{N}^{\star},a_n=\left(1+\dfrac{1}{n}\right)^n$，定义 $e=\lim\limits_{n\to +\infty}a_n, \ln a=\log_{\mathrm{e}}a$。</div>
 
-<div class = "theorem">$\mathrm{e}=\lim\limits_{x\to\infty}\left(1+\dfrac{1}{x}\right)^x=\lim\limits_{x\to 0}\left(1+x\right)^{\dfrac{1}{x}}=\sum\limits_{i=0}^{+\infty}\dfrac{1}{i!}$</div>
+<div class = "theorem">$\mathrm{e}=\lim\limits_{x\to\infty}\left(1+\dfrac{1}{x}\right)^x=\lim\limits_{x\to 0}\left(1+x\right)^{\frac{1}{x}}=\sum\limits_{i=0}^{+\infty}\dfrac{1}{i!}$</div>
 <div class = "theorem">$\forall x\neq 0,\mathrm{e}^x=\sum\limits_{i=0}^{+\infty}\dfrac{x^i}{i!}=\lim\limits_{n\to \infty}\left(1+\dfrac{x}{n}\right)^n=\lim\limits_{n\to 0}\left(1+xn\right)^{1/n}$</div>
 <div class = "theorem">$y=\ln x$ 和 $y=\mathrm{e}^x$ 在定义域上连续且单调递增。</div>
 以上证明略。
