@@ -35,11 +35,11 @@ $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\dfrac{1}{\left(k-1\right)n^{k-1}}+O
 设 $m\in\mathbb{N}^\star$，存在一组 $A_i$ 使得
 $$\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}=\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}+O\left(\dfrac{1}{n^{m+1}}\right)$$
 则 $\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}$ 是关于 $\dfrac{1}{n}$ 的多项式，由 Stolz 定理
-$$\lim\limits_{n\to\infty}\dfrac{\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}}{\dfrac{1}{n^m}}=\lim\limits_{n\to\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{m}{n^{m+1}}}=0$$
+$$\lim\limits_{n\to +\infty}\dfrac{\sum\limits_{i=n}^{+\infty}\dfrac{1}{i^k}-\sum\limits_{i=k-1}^m\dfrac{A_i}{n^i}}{\dfrac{1}{n^m}}=\lim\limits_{n\to +\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{m}{n^{m+1}}}=0$$
 因为分子是关于 $\dfrac{1}{n}$ 的多项式，所以 $A_{m+1}$ 存在，且
 $$
 \begin{aligned}
-A_{m+1} &= \lim\limits_{n\to\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{\left(m+1\right)n^m}{n^{m+1}\left(n+1\right)^{m+1}}}\\
+A_{m+1} &= \lim\limits_{n\to +\infty}\dfrac{-\dfrac{1}{n^k}+\sum\limits_{i=k-1}^mA_i\dfrac{\left(n+1\right)^i-n^i}{n^i\left(n+1\right)^i}}{-\dfrac{\left(m+1\right)n^m}{n^{m+1}\left(n+1\right)^{m+1}}}\\
 &= \dfrac{1}{m+1}\left[\binom{m+1}{k-1}-\sum\limits_{i=k-1}^m A_i\binom{m+1}{i-1}\right]
 \end{aligned}
 $$
