@@ -10,6 +10,7 @@ textarea {
 	height: 200px;
 	display: inline-block;
 	resize: none;
+	word-break: break-all;
 }
 
 a {
