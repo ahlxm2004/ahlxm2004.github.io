@@ -127,22 +127,22 @@ $a\lt 0$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$，取正整数 
 <div class = "theorem">$\forall b\ge 0,n\in \mathbb{R}\setminus\left\{0\right\},\exists a\gt 0,\mathrm{s.t.} a^n=b$ 且 $a$ 唯一。</div>
 以上证明略。
 
-<div class = "theorem">$\forall a\gt 0,b\gt 1,\exists x\gt 0$，有 $x^a\lt b$</div>
+<div class = "theorem">$\forall a\gt 0,b\gt 1,\exists x\gt 1,\mathrm{s.t.} x^a\lt b$</div>
 <div class = "proof">
-证明：令 $a\gt\max\left\{a',1\right\},a\in\mathbb{Q}$。令 $x=\dfrac{b-1}{a}$，则 $x^a\lt 1+x\left(a-1\right)=b$。
+证明：令 $a'\gt\max\left\{a,1\right\},a\in\mathbb{Q}$。令 $x=\frac{b-1}{a'}+1$，则 $x^a\lt x^{a'}\lt 1+x\left(a'-1\right)=b$。
 </div>
 
 <div class = "theorem">$\forall a\gt 0,b=\lim\limits_{n\to +\infty}\left\{x_n\right\}$，$\lim\limits_{n\to +\infty}a^{x_n}=a^b$</div>
 <div class = "proof">
 证明：$a=1$ 时显然。<br/>
-$a\neq 1$ 时，$\forall 0\lt \epsilon\lt a^b$，存在 $\delta\gt 0$，令 $\delta$ 满足 $\max\left\{a,\dfrac{1}{a}\right\}^\delta\lt 1+\dfrac{\epsilon}{a^b}$。<br/>
-必存在 $N$ 使得 $n\gt N$ 时有 $\lvert x_n-b\rvert\lt \delta$，则 $\lvert a^{x_n}-a^b\rvert\lt\epsilon$。
+$a\neq 1$ 时，$\forall 0\lt \epsilon\lt a^b$，存在 $\delta\gt 0$，满足 $\max\left\{a,\dfrac{1}{a}\right\}^\delta\lt 1+\dfrac{\epsilon}{a^b}$。<br/>
+存在 $N$ 使得 $n\gt N$ 时有 $\lvert x_n-b\rvert\lt \delta$，则 $\lvert a^{x_n}-a^b\rvert\lt\epsilon$。
 </div>
 
 <div class = "theorem">$\forall b\gt 0,a=\lim\limits_{n\to +\infty}\left\{x_n\right\}$，有 $\lim\limits_{n\to +\infty}x_n^{b}=a^b$</div>
 <div class = "proof">
 证明：$\forall 0\lt \epsilon\lt a^b$，取 $\delta\gt 1$ 使得 $\delta^{\lvert b\rvert}\lt 1+\dfrac{\epsilon}{a^b}$。<br/>
-必存在 $N$ 使得 $n\gt N$ 时有 $\lvert x_n-a\rvert\lt \dfrac{\delta-1}{\delta}a$，则 $\lvert x_n^b-a^b\rvert\lt\epsilon$。
+存在 $N$ 使得 $n\gt N$ 时有 $\lvert x_n-a\rvert\lt \dfrac{\delta-1}{\delta}a$，则 $\lvert x_n^b-a^b\rvert\lt\epsilon$。
 </div>
 
 <div class = "theorem">设 $a\in\mathbb{R},x\gt -1$，如果 $0\lt a\lt 1$，则 $\left(1+x\right)^a\le 1+ax$；如果 $a\lt 0$ 或 $a\gt 1$，则 $\left(1+x\right)^a\ge 1+ax$。当且仅当 $x=0$ 时等号成立。</div>
