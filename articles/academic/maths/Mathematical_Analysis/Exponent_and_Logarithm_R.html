@@ -129,13 +129,13 @@ $a\lt 0$ 时，若 $1+ax\le 0$ 则显然成立，若 $1+ax\gt 0$，取正整数 
 
 <div class = "theorem">$\forall a\gt 0,b\gt 1,\exists x\gt 1,\mathrm{s.t.} x^a\lt b$</div>
 <div class = "proof">
-证明：令 $a'\gt\max\left\{a,1\right\},a\in\mathbb{Q}$。令 $x=\frac{b-1}{a'}+1$，则 $x^a\lt x^{a'}\lt 1+x\left(a'-1\right)=b$。
+证明：令 $a'\gt\max\left\{a,1\right\},a\in\mathbb{Q}$。令 $x=\frac{b-1}{a'}+1$，则 $x^a\lt x^{a'}\lt 1+a'\left(x-1\right)=b$。
 </div>
 
 <div class = "theorem">$\forall a\gt 0,b=\lim\limits_{n\to +\infty}\left\{x_n\right\}$，$\lim\limits_{n\to +\infty}a^{x_n}=a^b$</div>
 <div class = "proof">
 证明：$a=1$ 时显然。<br/>
-$a\neq 1$ 时，$\forall 0\lt \epsilon\lt a^b$，存在 $\delta\gt 0$，满足 $\max\left\{a,\dfrac{1}{a}\right\}^\delta\lt 1+\dfrac{\epsilon}{a^b}$。<br/>
+$a\neq 1$ 时，$\forall 0\lt \epsilon\lt a^b$，存在 $\delta\gt 0$ 满足 $\max\left\{a,\dfrac{1}{a}\right\}^\delta\lt 1+\dfrac{\epsilon}{a^b}$。<br/>
 存在 $N$ 使得 $n\gt N$ 时有 $\lvert x_n-b\rvert\lt \delta$，则 $\lvert a^{x_n}-a^b\rvert\lt\epsilon$。
 </div>
 
