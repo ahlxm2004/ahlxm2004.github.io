@@ -1,3 +1,8 @@
+body {
+	margin: 8px;
+	overflow: hidden;
+}
+
 #game-wrapper {
 	margin: 3px auto;
 	border: 2px;
