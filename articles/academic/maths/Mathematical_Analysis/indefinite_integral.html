@@ -114,13 +114,13 @@ $
 \int\sqrt{\tan x}\mathrm{d}x &= \int\dfrac{\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x\\
 &= \dfrac{1}{2}\left(\int\dfrac{\cos x+\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x - \int\dfrac{\cos x-\sin x}{\sqrt{\sin x\cos x}}\mathrm{d}x\right)\\
 &= \dfrac{1}{\sqrt{2}}\left(\dfrac{\mathrm{d}\left(\sin x-\cos x\right)}{\sqrt{1-\left(\sin x-\cos x\right)^2}} + \dfrac{\mathrm{d}\left(\sin x+\cos x\right)}{\sqrt{\left(\sin x+\cos x\right)^2-1}}\right)\\
-&= \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)-\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left[0,\dfrac{\pi}{2}\right]\right)
+&= \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)-\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left[0,\dfrac{\pi}{2}\right)\right)
 \end{aligned}
 $
 <br/>
 $
 \begin{aligned}
-\int\sqrt{\cot x}\mathrm{d}x = \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)+\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left[0,\dfrac{\pi}{2}\right]\right)
+\int\sqrt{\cot x}\mathrm{d}x = \dfrac{1}{\sqrt{2}}\left(\arcsin\left(\sin x-\cos x\right)+\ln\left\vert\sin x+\cos x+\sqrt{2\sin x\cos x}\right\vert\right)+C \left(x\in\left(0,\dfrac{\pi}{2}\right]\right)
 \end{aligned}
 $
 <br/>
@@ -200,7 +200,7 @@ $
 <br/>
 $
 \begin{aligned}
-\int\dfrac{\mathrm{d}x}{\sin^6 x+\cos^6 x} &= \int\dfrac{\left(\sin^2 x+\cos^2 x\right)^3}{\sin^6 x+\cos^6 x}\mathrm{d}x\\
+\int\dfrac{\mathrm{d}x}{\sin^6 x+\cos^6 x} &= \int\dfrac{\left(\sin x+\cos x\right)^3}{\sin^6 x+\cos^6 x}\mathrm{d}x\\
 &= x+\int\dfrac{3\tan^2 x\mathrm{d}\left(\tan x\right)}{\tan^6 x+1}\\
 &= x+\arctan\left(\tan^3 x\right)+C
 \end{aligned}
