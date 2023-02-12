@@ -12,11 +12,11 @@
 
 <body>
 
-<p>base64 编码/解码：</p>
+<p>base64 编码/解码</p>
 <textarea id = "X" oninput = "encoder(event)"></textarea>
 <textarea id = "Y" oninput = "decoder(event)"></textarea>
 
-<script type="text/javascript">
+<script type = "text/javascript">
 	function encoder(event) {
 		document.getElementById("Y").value = window.btoa(unescape(encodeURIComponent(event.target.value)));
 	}
