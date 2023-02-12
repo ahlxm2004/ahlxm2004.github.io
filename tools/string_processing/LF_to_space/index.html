@@ -16,7 +16,7 @@
 <textarea id = "X" oninput = "convert(event)"></textarea>
 <textarea id = "Y"></textarea>
 
-<script type="text/javascript">
+<script type = "text/javascript">
 	function convert(event) {
 		document.getElementById("Y").value = event.target.value.replaceAll("\n", " ");
 	}
