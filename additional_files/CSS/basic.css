@@ -5,6 +5,11 @@ body {
 	line-height: 1.7;
 }
 
+footer {
+	text-align: center;
+	color: #8a8a8a;
+}
+
 textarea {
 	width: 40%;
 	height: 200px;
