@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8"> 
+<link type = "text/css" rel = "stylesheet" href = "../../../additional_files/CSS/basic.css"></link>
+<link type = "text/css" rel = "stylesheet" href = "OI.css"></link>
+<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+<script async src = "../../../additional_files/MathJax/es5/tex-mml-chtml.js"></script>
+<link type = "text/css" rel = "stylesheet" href = "../../../additional_files/code_highlight/current_css.css">
+<script src = "../../../additional_files/code_highlight/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script async src = "../../../additional_files/JS/busuanzi.min.js"></script>
+<title>FFT 入门</title>
+
+</head>
+
+
+<body>
+
+<center>FFT（快速傅里叶变换）</center>
+注：大部分内容并非原创。
+
+<div class = "subtitle">多项式</div>
+
+定义：多项式是指由变量、系数以及它们之间的加、减、乘、幂运算（非负整数次方）得到的表达式。<br/>
+<div class = "definition"><b>项</b>：多项式中的每个单项式叫做多项式的项。</div>
+<div class = "definition"><b>多项式的次数</b>：这些单项式中的最高项次数，就是这个多项式的次数。</div>
+一个 $n$ 次多项式可以表示为 $\sum\limits_{i=0}^na_ix^i$,其中 $a_i$ 为系数。
+
+<div class = "subtitle">复数</div>
+定义：我们把形如 $z=a+b\mathrm{i}$（$a,b$ 均为实数）的数称为<b>复数</b>，其中 $a$ 称为实部，$b$ 称为虚部，$i$ 称为虚数单位，（$\mathrm{i}^2=-1$）
+设 $z_1=a+b\mathrm{i}$,$z_2=c+d\mathrm{i}$
+$$z_1\pm z_2=\left(a\pm c\right)+\left(b\pm d\right)\mathrm{i}$$
+$$z_1\times z_2=\left(ac-bd\right)+\left(ad+bc\right)\mathrm{i}$$
+$$z_1 \div z_2=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\mathrm{i}$$
+
+<div class = "subtitle">单位根</div>
+定义：记方程 $\omega^n=1\left(n\in N^{+}\right)$ 的 $n$ 个复数解为 $n$ 次单位根。
+可以解出 $\omega=\mathrm{e}^{\frac{2k\pi i}{n}}$<br/>
+定义 <b>主次单位根</b>：$\omega_n=\mathrm{e}^{\frac{2\pi i}{n}}$<br/>
+对于 <b>所有单位根</b>，记作：$\omega_n^k=\mathrm{e}^{\frac{2k\pi i}{n}}$
+
+<div class = "subtitle">多项式乘法卷积</div>
+对于 $n$ 次多项式 $A,B$，$A=\sum\limits_{i=0}^na_ix^i$,$B=\sum\limits_{i=0}^nb_ix^i$<br/>
+若 $A$ 与 $B$ 的乘法卷积为 $C$，$C=\sum\limits_{i=0}^{n}\sum\limits_{j=0}^{n}a_ib_jx^{i+j}$
+
+<div class = "subtitle">多项式的点值表示</div>
+众所周知，一个 $n$ 次函数可以由 $n+1$ 个点对 $\left(x_i,y_i\right)$ 唯一确定（其中 $x_i$ 互不相同）<br/>
+因此可以用 $n+1$ 个点对表示出一个 $n$ 次的多项式。<br/>
+若 $A=\left(\left(x_1,y_1\right),\left(x_2,y_2\right),\dots,\left(x_n,y_n\right)\right)$，$B=\left(\left(x_1,y'_1\right),\left(x_2,y_2'\right),\dots,\left(x_n,y_n'\right)\right)$<br/>
+则 $A\times B=\left(\left(x_1,y_1y_1'\right),\left(x_2,y_2y_2'\right),\dots,\left(x_n,y_ny_n'\right)\right)$<br/>
+所以如果多项式的点值已知，那么多项式的乘法是 $O\left(n\right)$ 的。<br/>
+若把点对的数量扩大至 $2n+1$，则可以唯一确定 $C$。
+
+<div class = "subtitle">DFT & IDFT</div>
+<b>DFT（离散傅里叶变换）</b>是系数数列 $a_0,a_1,\cdots,a_n$ 转为点值数列的过程，<b>IDFT（逆离散傅里叶变换）</b>是</b>DFT</b>的逆运算。<br/>
+注意到单位根存在以下性质
+$$\omega_{2n}^{k}+\omega_{2n}^{n+k}=0$$
+$$\left(\omega_{2n}^k\right)^2=\omega_{n}^k$$
+考虑用单位根的性质优化 DFT。
+对于多项式 $A\left(x\right)=\sum_{i=0}^{2n-1}a_ix^i$，其中 $2n=2^k\left(k\in N^{+}\right)$，我们将 $\omega_{2n}^0,\omega_{2n}^1,\cdots,\omega_{2n}^{{2n}-1}$ 代入公式计算点值。
+现在重定义两个多项式
+$$A_0\left(x\right)=a_0+a_2x+a_4x^2+\cdots+a_{2n}x^n$$
+$$A_1\left(x\right)=a_1+a_3x+a_5x^2+\cdots+a_{2n-1}x^n$$
+显然
+$$A\left(x\right)=A_0\left(x^2\right)+xA_1\left(x^2\right)$$
+将单位复根代入上式
+$$\begin{aligned}A\left(\omega_{2n}^k\right) & =A_0\left(\left(\omega_{2n}^k\right)^2\right)+\omega_{2n}^kA_1\left(\left(\omega_{2n}^k\right)^2\right)\\&=A_0\left(\omega_n^k\right)+\omega_{2n}^kA_1\left(\omega_n^k\right)\\A\left(\omega_{2n}^{n+k}\right)&=A_0\left(\left(\omega_{2n}^{n+k}\right)^2\right)+\omega_{2n}^{n+k}A_1\left(\left(\omega_{2n}^{n+k}\right)^2\right)\\&=A_0\left(\omega_n^k\right)-\omega_{2n}^kA_1\left(\omega_n^k\right)\end{aligned}$$
+
+发现对于 $k\in\left[0,1,\cdots,n-1\right]$ $A\left(\omega_{2n}^k\right)$ 和 $A\left(\omega_{2n}^{n+k}\right)$ 是可以在一起计算的。
+于是有以下伪代码
+
+<pre><code class = "cpp">function FFT(complex A[], int Length)
+    if Length == 1 return
+    complex A0[Length / 2], A1[Length / 2]
+    for int i = 0 to Length / 2 - 1 with i += 1
+    	A0[i] = A[i * 2]
+        A1[i] = A[i * 2 + 1]
+	FFT(A0, Length / 2)
+	FFT(A1, Length / 2)
+	complex wn = (cos(2 * Pi / Length), sin(2 * Pi / Length))
+	complex w = (1, 0)
+	for int i = 0 to Length / 2 - 1 with i += 1, w *= wn
+		A[i] = A0[i] + A1[i] * w
+		A[i + Length / 2] = A0[i] - A1[i] * w
+</code></pre>
+
+IDFT 是 DFT 的逆运算，令 $DFT\left(\left\{a_i\right\}\right)=\left\{b_i\right\}$，已知
+$$b_k=\sum_{i=0}^{n-1}a_i\omega_n^{ki}$$
+
+存在结论
+$$a_k=\frac 1 n\sum_{i=0}^{n-1}b_i\omega_n^{-ki}$$
+
+证明：将前式代入后式
+$$\begin{aligned}a_k&=\frac 1 n\sum_{i=0}^{n-1}b_i\omega_n^{-ki}\\&=\frac 1 n\sum_{i=0}^{n-1}\omega_n^{-ki}\sum_{j=0}^{n-1}a_j\omega_n^{ij}\\&=\frac 1 n\sum_{j=0}^{n-1}a_j\sum_{i=0}^{n-1}\omega_n^{-ki}\omega_{n}^{ij}\\&=\frac 1 n\sum_{j=0}^{n-1}a_j\sum_{i=0}^{n-1}\omega_{n}^{i\left(j-k\right)}\end{aligned}$$
+
+考虑 $\sum_{i=0}^{n-1}\omega_n^{i\left(j-k\right)}$
+当 $j=k$，
+$$\sum_{i=0}^{n-1}\omega_n^{i\left(j-k\right)}=\sum1=n$$
+当 $j\neq k$， 
+$$\begin{aligned}\sum_{i=0}^{n-1}\omega_n^{i\left(j-k\right)}&=\sum_{i=0}^{n-1}\left(\omega_n^{j-k}\right)^i\\&=\frac{1-\left(\omega_n^{j-k}\right)^n}{1-\omega_n^{j-k}}\\&=\frac{1-\left(\omega_n^n\right)^{j-k}}{1-\omega_n^{j-k}}=\frac{1-1}{1-\omega_n^{j-k}}=0\end{aligned}$$
+
+所以，
+$$\begin{aligned}a_k&=\frac 1 n\sum_{j=0}^{n-1}a_j\sum_{i=0}^{n-1}\omega_{n}^{i\left(j-k\right)}\\&=\frac 1 n\cdot na_k=a_k\end{aligned}$$
+
+发现 DFT 和 IDFT 的公式形式一样，所以可以用一个函数实现。
+
+<div class = "subtitle">蝴蝶操作</div>
+
+考虑 FFT 的分治过程，以 $n=16$ 为例
+$$\left\{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15\right\}$$
+$$\left\{0,2,4,6,8,10,12,14\right\},\left\{1,3,5,7,9,11,13,15\right\}$$
+$$\left\{0,4,8,12\right\},\left\{2,6,10,14\right\},\left\{1,5,9,13\right\},\left\{3,7,11,15\right\}$$
+$$\left\{0,8\right\},\left\{4,12\right\},\left\{2,10\right\},\left\{6,14\right\},\left\{1,9\right\},\left\{5,13\right\},\left\{3,11\right\},\left\{7,15\right\}$$
+其二进制下表示，
+$$\left\{0000,1000\right\},\left\{0100,1100\right\},\left\{0010,1010\right\},\left\{0110,1110\right\},$$
+$$\left\{0001,1001\right\},\left\{0101,1101\right\},\left\{0011,1011\right\},\left\{0111,1111\right\}$$
+观察发现，若干次蝴蝶操作（奇偶分治）后，其数位二进制翻转后是连续的。
+对于二进制翻转，可用递推计算，<code>rev[i] = rev[i >> 1] >> 1 | (i & 1 ? n >> 1 : 0)</code>。
+考虑用蝴蝶定理使 FFT 的过程避免递归，可以先将 $\left\{a_i\right\}$ 按 $rev$ 序重新排列，在分治树上从下往上，
+<pre><code class = "cpp">function FFT(complex A[], int Length, int on)
+	for int i = 0 to Length - 1 with i += 1
+		if i < Rev[i]
+			swap(A[i], A[Rev[i]])
+	for int k = 1 to n - 1 with k *= 2
+		complex wn = (cos(Pi / k), sin(on * Pi / k))
+		for int i = 0 to n with i += k * 2
+			complex w = (1, 0)
+			for int j = i to i + k - 1 with j += 1
+				complex x = a[j]
+				complex y = a[j + k]
+				a[j] = x + y
+				a[j + k] = x - y
+	if on == -1
+		for int i = 0 to n - 1 with i += 1
+			a[i] /= n
+</code></pre>
+
+然后枚举当前合并的长度 $2k$，枚举合并区间开始位置 $i$，枚举区间中的元素 $a_j$。
+<pre><code class = "cpp">struct node{
+	double x,y;
+}A[MAXN],B[MAXN];
+node operator+ (node p,node q){return (node){p.x+q.x,p.y+q.y};}
+node operator- (node p,node q){return (node){p.x-q.x,p.y-q.y};}
+node operator* (node p,node q){return (node){p.x*q.x-p.y*q.y,p.x*q.y+p.y*q.x};}
+void FFT(node *X,int flag){
+    for (int i=0;i&lt;len;i++) if (i&lt;rev[i]) swap(X[i],X[rev[i]]);
+    for (int l=1;l&lt;len;l&lt;&lt;=1){
+        node T=(node){cos(Pi/l),flag*sin(Pi/l)};
+        for (int s=0;s&lt;len;s+=(l&lt;&lt;1)){
+            node t=(node){1,0};
+            for (int k=0;k&lt;l;k++,t=t*T){
+                node Nx=X[s+k],Ny=t*X[s+k+l];
+                X[s+k]=Nx+Ny,X[s+k+l]=Nx-Ny;
+            }
+        }
+    }
+    for (register int i=0;i&lt;len;i++) A[i].x/=len;
+    return;
+}
+int main(){
+    n=qr(),m=qr();
+    for (int i=0;i&lt;=n;i++) A[i].x=qr();
+    for (int i=0;i&lt;=m;i++) B[i].x=qr();
+    while (len&lt;=n+m) len&lt;&lt;=1,++L;
+    for (int i=0;i&lt;len;i++) R[i]=(R[i&gt;&gt;1]&gt;&gt;1)|((i&1)&lt;&lt;(L-1));
+    FFT(A,1);FFT(B,1);
+    for (int i=0;i&lt;=len;i++) A[i]=A[i]*B[i];
+    FFT(A,-1);
+    for (int i=0;i&lt;=n+m;i++) printf("%d ",(int)(A[i].x+0.5));
+    return 0;
+}
+</code></pre>
+
+<div id = "gitalk-container"></div>
+<link type = "text/css" rel = "stylesheet" href = "../../../additional_files/CSS/gitalk.min.css"></link>
+<script src = "../../../additional_files/JS/gitalk.min.js"></script>
+
+</body>
+
+</html>
