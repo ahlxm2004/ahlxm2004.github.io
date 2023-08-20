@@ -30,14 +30,14 @@
 一个 $n$ 次多项式可以表示为 $\sum\limits_{i=0}^na_ix^i$,其中 $a_i$ 为系数。
 
 <div class = "subtitle">复数</div>
-定义：我们把形如 $z=a+b\mathrm{i}$（$a,b$ 均为实数）的数称为<b>复数</b>，其中 $a$ 称为实部，$b$ 称为虚部，$i$ 称为虚数单位，（$\mathrm{i}^2=-1$）
+定义：我们把形如 $z=a+b\mathrm{i}$（$a,b$ 均为实数）的数称为<b>复数</b>，其中 $a$ 称为实部，$b$ 称为虚部，$i$ 称为虚数单位，（$\mathrm{i}^2=-1$）<br/>
 设 $z_1=a+b\mathrm{i}$,$z_2=c+d\mathrm{i}$
 $$z_1\pm z_2=\left(a\pm c\right)+\left(b\pm d\right)\mathrm{i}$$
 $$z_1\times z_2=\left(ac-bd\right)+\left(ad+bc\right)\mathrm{i}$$
 $$z_1 \div z_2=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\mathrm{i}$$
 
 <div class = "subtitle">单位根</div>
-定义：记方程 $\omega^n=1\left(n\in N^{+}\right)$ 的 $n$ 个复数解为 $n$ 次单位根。
+定义：记方程 $\omega^n=1\left(n\in N^{+}\right)$ 的 $n$ 个复数解为 $n$ 次单位根。<br/>
 可以解出 $\omega=\mathrm{e}^{\frac{2k\pi i}{n}}$<br/>
 定义 <b>主次单位根</b>：$\omega_n=\mathrm{e}^{\frac{2\pi i}{n}}$<br/>
 对于 <b>所有单位根</b>，记作：$\omega_n^k=\mathrm{e}^{\frac{2k\pi i}{n}}$
@@ -59,8 +59,8 @@ $$z_1 \div z_2=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\mathrm{i}$$
 注意到单位根存在以下性质
 $$\omega_{2n}^{k}+\omega_{2n}^{n+k}=0$$
 $$\left(\omega_{2n}^k\right)^2=\omega_{n}^k$$
-考虑用单位根的性质优化 DFT。
-对于多项式 $A\left(x\right)=\sum_{i=0}^{2n-1}a_ix^i$，其中 $2n=2^k\left(k\in N^{+}\right)$，我们将 $\omega_{2n}^0,\omega_{2n}^1,\cdots,\omega_{2n}^{{2n}-1}$ 代入公式计算点值。
+考虑用单位根的性质优化 DFT。<br/>
+对于多项式 $A\left(x\right)=\sum_{i=0}^{2n-1}a_ix^i$，其中 $2n=2^k\left(k\in N^{+}\right)$，我们将 $\omega_{2n}^0,\omega_{2n}^1,\cdots,\omega_{2n}^{{2n}-1}$ 代入公式计算点值。<br/>
 现在重定义两个多项式
 $$A_0\left(x\right)=a_0+a_2x+a_4x^2+\cdots+a_{2n}x^n$$
 $$A_1\left(x\right)=a_1+a_3x+a_5x^2+\cdots+a_{2n-1}x^n$$
@@ -69,7 +69,7 @@ $$A\left(x\right)=A_0\left(x^2\right)+xA_1\left(x^2\right)$$
 将单位复根代入上式
 $$\begin{aligned}A\left(\omega_{2n}^k\right) & =A_0\left(\left(\omega_{2n}^k\right)^2\right)+\omega_{2n}^kA_1\left(\left(\omega_{2n}^k\right)^2\right)\\&=A_0\left(\omega_n^k\right)+\omega_{2n}^kA_1\left(\omega_n^k\right)\\A\left(\omega_{2n}^{n+k}\right)&=A_0\left(\left(\omega_{2n}^{n+k}\right)^2\right)+\omega_{2n}^{n+k}A_1\left(\left(\omega_{2n}^{n+k}\right)^2\right)\\&=A_0\left(\omega_n^k\right)-\omega_{2n}^kA_1\left(\omega_n^k\right)\end{aligned}$$
 
-发现对于 $k\in\left[0,1,\cdots,n-1\right]$ $A\left(\omega_{2n}^k\right)$ 和 $A\left(\omega_{2n}^{n+k}\right)$ 是可以在一起计算的。
+发现对于 $k\in\left[0,1,\cdots,n-1\right]$ $A\left(\omega_{2n}^k\right)$ 和 $A\left(\omega_{2n}^{n+k}\right)$ 是可以在一起计算的。<br/>
 于是有以下伪代码
 
 <pre><code class = "cpp">function FFT(complex A[], int Length)
