@@ -117,8 +117,8 @@ $$\left\{0,8\right\},\left\{4,12\right\},\left\{2,10\right\},\left\{6,14\right\}
 其二进制下表示，
 $$\left\{0000,1000\right\},\left\{0100,1100\right\},\left\{0010,1010\right\},\left\{0110,1110\right\},$$
 $$\left\{0001,1001\right\},\left\{0101,1101\right\},\left\{0011,1011\right\},\left\{0111,1111\right\}$$
-观察发现，若干次蝴蝶操作（奇偶分治）后，其数位二进制翻转后是连续的。
-对于二进制翻转，可用递推计算，<code>rev[i] = rev[i >> 1] >> 1 | (i & 1 ? n >> 1 : 0)</code>。
+观察发现，若干次蝴蝶操作（奇偶分治）后，其数位二进制翻转后是连续的。<br/>
+对于二进制翻转，可用递推计算，<code>rev[i] = rev[i >> 1] >> 1 | (i & 1 ? n >> 1 : 0)</code>。<br/>
 考虑用蝴蝶定理使 FFT 的过程避免递归，可以先将 $\left\{a_i\right\}$ 按 $rev$ 序重新排列，在分治树上从下往上，
 <pre><code class = "cpp">function FFT(complex A[], int Length, int on)
 	for int i = 0 to Length - 1 with i += 1
