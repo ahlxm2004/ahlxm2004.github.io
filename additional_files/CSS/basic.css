@@ -3,6 +3,7 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	line-height: 1.7;
+	font-size: 18px;
 }
 
 footer {
