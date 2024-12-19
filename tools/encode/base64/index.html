@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8">
+<link type = "text/css" rel = "stylesheet" href = "../../../additional_files/CSS/basic.css"></link>
+<script async src = "../../../additional_files/JS/busuanzi.min.js"></script>
+<title>base64</title>
+
+</head>
+
+
+<body>
+
+<p>base64 编码/解码</p>
+<textarea id = "X" oninput = "encoder(event)"></textarea>
+<textarea id = "Y" oninput = "decoder(event)"></textarea>
+
+<script type = "text/javascript">
+	function encoder(event) {
+		document.getElementById("Y").value = window.btoa(unescape(encodeURIComponent(event.target.value)));
+	}
+
+	function decoder(event) {
+		var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+		if (base64regex.test(event.target.value.trim()))
+			try {document.getElementById("X").value = decodeURIComponent(escape(window.atob(event.target.value.trim())));}
+			catch (error) {document.getElementById("X").value = "invisible string";}
+		else document.getElementById("X").value = "invalid string";
+	}
+
+	window.onbeforeunload = function() {
+		if (window.localStorage)
+			window.localStorage.setItem("tools-encode-base64-X", document.getElementById("X").value),
+			window.localStorage.setItem("tools-encode-base64-Y", document.getElementById("Y").value);
+	}
+
+	if (window.localStorage && localStorage.getItem("tools-encode-base64-X") != null)
+		document.getElementById("X").innerHTML = localStorage.getItem("tools-encode-base64-X"),
+		document.getElementById("Y").innerHTML = localStorage.getItem("tools-encode-base64-Y");
+</script>
+
+</body>
+
+</html>

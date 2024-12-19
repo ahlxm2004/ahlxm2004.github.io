@@ -1,0 +1,92 @@
+body {
+	margin: 8px;
+	overflow: hidden;
+}
+
+#game-wrapper {
+	margin: 3px auto;
+	border: 2px;
+	border-radius: 2%;
+	border-style: solid;
+	border-color: #00ff33;
+	text-align: center;
+}
+
+#header {
+	margin: 0 auto;
+	width: 95%;
+	padding: 1% 1%;
+	font-family: Tahoma;
+	text-align: center;
+}
+
+#header .score {
+	width: 30%;
+	background: #666666;
+	border: 3px;
+	border-radius: 3px;
+	border-style: solid;
+	border-color: #666666;
+	padding: 1% 0%;
+	display: inline-block;
+	color: white;
+}
+
+#header .button {
+	width: 30%;
+	background: #cc0099;
+	border: 3px;
+	border-radius: 3px;
+	border-style: solid;
+	border-color: #cc0099;
+	padding: 1% 0%;
+	font-family: Tahoma;
+	color: white;
+	outline: none;
+}
+
+#header .button:hover {
+	background-color: #FF4500;
+	border-color: #FF4500;
+	color: white;
+}
+
+#grid-container {
+	margin: 2% auto;
+	background-color: #9C9C9C;
+	width: 90%;
+	border: 2px;
+	border-radius: 1%;
+	border-style: solid;
+	border-color: #9C9C9C;
+	padding: calc(1% - 2px) calc(1% - 2px);
+	font-size: 0px;
+	position: relative;
+	text-align: center;
+}
+
+#grid-container .grid-cell {
+	margin: 1.5% 1.5%;
+	border: 2px;
+	border-radius: 5%;
+	border-style: solid;
+	border-color: #D1EEEE;
+	padding: calc(10.9% - 2px) calc(10.9% - 2px);
+	background-color: #D1EEEE;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+}
+
+#grid-container .number-cell {
+	border: 4px;
+	border-radius: 5%;
+	border-style: solid;
+	padding: 0% 0%;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 2;
+}

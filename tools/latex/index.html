@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8">
+<link type = "text/css" rel = "stylesheet" href = "../../additional_files/CSS/basic.css"></link>
+<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+<script id = "Mathjax-script" src = "../../additional_files/MathJax/es5/tex-chtml.js"></script>
+<script async src = "../../additional_files/JS/busuanzi.min.js"></script>
+<title>LaTeX</title>
+
+</head>
+
+
+<body style = "overflow-x: auto">
+
+<p>$\LaTeX$ 编辑器</p>
+<textarea id = "text" oninput = "convert()" style = "width: 100%"></textarea>
+<div id = "formula"></div>
+
+<script type = "text/javascript">
+	function convert() {
+		var input = document.getElementById("text").value;
+		var output = document.getElementById("formula");
+		output.innerHTML = "";
+		MathJax.texReset();
+		var options = MathJax.getMetricsFor(output);
+		MathJax.tex2chtmlPromise(input, options).then(
+			function(node) {
+				output.appendChild(node);
+				MathJax.startup.document.clear();
+				MathJax.startup.document.updateDocument();
+			});
+	}
+
+	window.onbeforeunload = function() {
+		if (window.localStorage)
+			window.localStorage.setItem("tools-latex-text", document.getElementById("text").value);
+	}
+
+	if (window.localStorage && localStorage.getItem("tools-latex-text") != null)
+		document.getElementById("text").innerHTML = localStorage.getItem("tools-latex-text"), convert();
+</script>
+
+</body>
+
+</html>

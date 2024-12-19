@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset = "utf-8">
+<link type = "text/css" rel = "stylesheet" href = "../../../additional_files/CSS/basic.css"></link>
+<script async src = "../../../additional_files/JS/busuanzi.min.js"></script>
+<title>换行转空格</title>
+
+</head>
+
+
+<body>
+
+<p>换行转空格</p>
+<textarea id = "X" oninput = "convert(event)"></textarea>
+<textarea id = "Y"></textarea>
+
+<script type = "text/javascript">
+	function convert(event) {
+		document.getElementById("Y").value = event.target.value.replaceAll("\n", " ");
+	}
+
+	window.onbeforeunload = function() {
+		if (window.localStorage)
+			window.localStorage.setItem("tools-string_process-LF_to_space-X", document.getElementById("X").value),
+			window.localStorage.setItem("tools-string_process-LF_to_space-Y", document.getElementById("Y").value);
+	}
+
+	if (window.localStorage && localStorage.getItem("tools-encode-base64-X") != null)
+		document.getElementById("X").innerHTML = localStorage.getItem("tools-string_process-LF_to_space-X"),
+		document.getElementById("Y").innerHTML = localStorage.getItem("tools-string_process-LF_to_space-Y");
+</script>
+
+</body>
+
+</html>
